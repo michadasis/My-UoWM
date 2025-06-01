@@ -1,0 +1,9 @@
+name: "mycs"
+
+services:
+    frontend:
+        container_name: frontend
+        build: .
+        image: ieeesbkastoria/mycs-uowm:latest
+        ports:
+            - "80:80"

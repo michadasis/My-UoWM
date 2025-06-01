@@ -1,0 +1,18 @@
+export default {
+    page_title:"Frequently Asked Questions",
+    page_desc:"Here you can find the answers to questions that may interest you.",
+    qu1: "Who is this app for?",
+    ans1:"It is addressed to all students of the Department of Informatics of the University of Western Macedionia, Kastoria.",
+    qu2: "What can I find in the app?",
+    ans2: "The app presents on your mobile, all the services of the university, as well as everything a student may need during their studies.",
+    qu3: "Where can I install the app from?",
+    ans3: "The app can be added to your home screen. Select your browser, click on the menu on the right, and then select 'Add to Home Screen'. The app will be automatically installed on your device.",
+    qu4: "Does the app work offline?",
+    ans4: "For the time being, the app needs to be connected to the internet, in order to present you with the data you have searched for. In a future version of the app, an internet connection may not be necessary for it to function.",
+    qu5: "Is the app free?",
+    ans5: "The app is available free of charge to all students and staff of the university.",
+    qu6: "Who created the app?",
+    ans6: "The original application was built by the Open Software Team of the University of Macedonia. The current version was developed by the IEEE team of the University of West Macedonia, Kastoria.",
+    qu7: "Where are my personal data stored?",
+    ans7: "Your personal data are not stored on any university server.",
+};
