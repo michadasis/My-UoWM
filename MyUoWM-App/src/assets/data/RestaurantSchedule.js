@@ -3,7 +3,7 @@ export const RESTAURANT_HOURS = {
     on_weekdays: {
       start: {
         hours: 12,
-        minutes: 30,
+        minutes: 0,
       },
       end: {
         hours: 15,
@@ -28,7 +28,7 @@ export const RESTAURANT_HOURS = {
         minutes: 0,
       },
       end: {
-        hours: 20,
+        hours: 21,
         minutes: 0,
       },
     },
@@ -46,7 +46,7 @@ export const RESTAURANT_HOURS = {
   for_breakfast: {
     on_weekdays: {
       start: {
-        hours: ,
+        hours: 8,
         minutes: 0,
       },
       end: {
@@ -56,12 +56,12 @@ export const RESTAURANT_HOURS = {
     },
     on_weekend: {
       start: {
-        hours: 8,
+        hours: 9,
         minutes: 0,
       },
       end: {
-        hours: 9,
-        minutes: 30,
+        hours: 10,
+        minutes: 0,
       },
     },
   },
