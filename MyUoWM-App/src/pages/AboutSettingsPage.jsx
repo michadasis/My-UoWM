@@ -35,7 +35,6 @@
     -Fakidis
 
 */
-
 import {
   Accordion,
   Box,
@@ -96,3 +95,5 @@ function AboutSettingsPage() {
 }
 
 export default AboutSettingsPage;
+
+
