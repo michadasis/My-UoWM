@@ -30,8 +30,8 @@ import ThemeToggle from "./ThemeToggle";
 export function SettingsDrawer({ isOpen, onClose }) {
     const handleShare = (e) => {
         const shareOpts = {
-            title: "myUoM",
-            url: "https://gitlab.com/opensourceuom/myUoM/",
+            title: "my-UWoM",
+            url: "https://github.com/ieeesbkastoria/My-UoWM",
         };
         // on PCs the function does not exist we can define another behavior
         if (navigator.canShare) {
@@ -118,7 +118,7 @@ export function SettingsDrawer({ isOpen, onClose }) {
                             </a>
                             <SettingsOption Icon={FaShareAlt} onClick={handleShare} text={i18n.t("share_app")} />
                             <a
-                                href="https://gitlab.com/opensourceuom/myUoM"
+                                href="https://github.com/ieeesbkastoria/My-UoWM"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
