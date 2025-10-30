@@ -11,6 +11,7 @@ import enProjectMembers from "./assets/locales/en/project_members.js";
 import enSettingsPage from "./assets/locales/en/settings_page.js";
 import enAboutPage from "./assets/locales/en/about_page.js";
 import enError404 from "./assets/locales/en/error404.js"
+import enUoWMMembers from "./assets/locales/en/uowm_members.js";
 
 import elRestaurant from "./assets/locales/el/restaurant.js";
 import elFreshmen from "./assets/locales/el/freshmen.js";
@@ -24,6 +25,7 @@ import elSettingsPage from "./assets/locales/el/settings_page.js";
 import elAboutPage from "./assets/locales/el/about_page.js";
 import elError404 from "./assets/locales/el/error404.js"
 import studentCare from "./assets/locales/el/studentCare.js";
+import elUoWMMembers from "./assets/locales/el/uowm_members.js";
 
 const resources = {
   en: {
@@ -40,6 +42,7 @@ const resources = {
       ...enAboutPage,
       ...enError404,
       ...studentCare,
+      ...enUoWMMembers,
       //categories.js
       eudoxus: "Eudoxus",
       Services : "Services",
@@ -110,7 +113,7 @@ const resources = {
       DMCTeam: "DMC Team",
       MousikhOmada: "Music Team",
       TheatrikhOmada: "Theatre Team",
-      },
+    },
   },
   el: {
     translation: {
@@ -126,6 +129,7 @@ const resources = {
       ...elAboutPage,
       ...elError404,
       ...studentCare,
+      ...elUoWMMembers,
 
       //categories.js
       eudoxus: "Εύδοξος",
