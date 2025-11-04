@@ -109,7 +109,7 @@ export function SettingsDrawer({ isOpen, onClose }) {
                                 <SettingsOption Icon={FaFileAlt} onClick={onClose} text={i18n.t("license")} />
                             </a>
                             <a
-                                href="https://drive.google.com/drive/folders/1LToRmuLuJDSXsTl99GL80mmP4ifcjw6V?usp=sharing"
+                                href="https://drive.google./drive/folders/1LToRmuLuJDSXsTl99GL80mmP4ifcjw6V?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -125,7 +125,7 @@ export function SettingsDrawer({ isOpen, onClose }) {
                                 <SettingsOption Icon={FaGitlab} onClick={onClose} text={i18n.t("gitlab_contribute")} />
                             </a>
                             <a
-                                href="https://docs.google.com/forms/u/2/d/e/1FAIpQLSduM517c4OtIs-CNv5cjQtYcj6OXRDtCP6x0Q7d4Ymhd3xQMg/viewform"
+                                href="https://docs.google.com/forms/d/1EYLswtiR87ZY1yumXJ04C5genP4QnikzGwsnZMhKGKQ/edit"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
