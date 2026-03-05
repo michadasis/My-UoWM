@@ -128,13 +128,13 @@ export const Categories = [
   {
     title: i18n.t("restaurant"),
     iconSVG: <MealIcon />,
-    route: "https://www.uowm.gr/epikairotita/sitisi/enimerosi-gia-tin-leitoyrgia-ton-estiatorion-toy-panepistimioy-dytikis-makedonias-2024/",
+    route: "/RestaurantUniversity",
     span: 2,
-    isExternal: true,
+    isExternal: false,
     requireSelection: false,
     position: 7,
     hide: false,
-    pageToDisplay: null,
+    pageToDisplay: <RestaurantUniversity />,
   },
    
   {
