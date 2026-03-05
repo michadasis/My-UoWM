@@ -1,31 +1,25 @@
 import { menu } from '../assets/data/restaurantMenu';
 
-export const getCurrentWeekKey = () => {
-  const { cycleWeeks } = menu;
+export const getCurrentWeekKey = (menuData = menu) => {
+  const { cycleWeeks } = menuData;
 
-  // First Monday on or after Sep 8 2025
-  const schoolYearStart = new Date(2025, 8, 8); // Sep 8 2025
-  const dayOfWeek = schoolYearStart.getDay(); // 0=Sun, 1=Mon...
-  const daysUntilMonday = dayOfWeek === 0 ? 1 : (8 - dayOfWeek) % 7;
-  const firstMonday = new Date(schoolYearStart);
-  firstMonday.setDate(schoolYearStart.getDate() + daysUntilMonday);
+  const startDate = new Date(2025, 0, 6); // Jan 6 2025
 
-  const today = new Date();
-  const msPerWeek = 7 * 24 * 60 * 60 * 1000;
-  const weeksElapsed = Math.floor((today - firstMonday) / msPerWeek);
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-  // Clamp to valid range and apply modulo
-  const weekInCycle = ((Math.max(0, weeksElapsed) % cycleWeeks) + 1);
+  const diffDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+  const weeksElapsed = Math.floor(diffDays / 7);
 
-  // Safety fallback in case key doesn't exist
+  const weekInCycle = (weeksElapsed % cycleWeeks) + 1;
   const key = `week${weekInCycle}`;
-  return menu[key] ? key : 'week1';
+  return menuData[key] ? key : 'week1';
 };
 
-export const getPreviousWeekKey = () => {
-  const { cycleWeeks } = menu;
-  const current = parseInt(getCurrentWeekKey().replace('week', ''), 10);
+export const getPreviousWeekKey = (menuData = menu) => {
+  const { cycleWeeks } = menuData;
+  const current = parseInt(getCurrentWeekKey(menuData).replace('week', ''), 10);
   const previous = ((current - 2 + cycleWeeks) % cycleWeeks) + 1;
   const key = `week${previous}`;
-  return menu[key] ? key : 'week1';
+  return menuData[key] ? key : 'week1';
 };
