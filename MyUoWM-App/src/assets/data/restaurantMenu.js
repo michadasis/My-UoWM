@@ -1,175 +1,169 @@
 // Menu auto-generated from PDF  (2-week cycle)
-// School year: 2025-09-08 → 2026-06-12
-// Total school weeks : 40
-// Full 2-week cycles: 20  (+ 0 partial week(s))
 
 export const menu = {
   cycleWeeks: 2,
-  totalSchoolWeeks: 40,
-  fullCycles: 20,
-  partialWeeks: 0,
   breakfast: {
-    drinks: ["Τσάι", "Γάλα", "Χυμός"],
-    spreads: ["Μαρμελάδα 2 είδη", "Μέλι", "Βούτυρο", "Μαργαρίνη", "Τυρί Edam", "Ζαμπόν"],
-    breads: ["Ψωμί Λευκό-μαύρο", "Φρυγανιές"],
-    staples: ["Αυγό", "Κέικ", "Corn Flakes (Δημητριακά)"],
+    drinks: { gr: ["Τσάι", "Γάλα", "Χυμός"], en: ["Tea", "Milk", "Juice"] },
+    spreads: { gr: ["Μαρμελάδα 2 είδη", "Μέλι", "Βούτυρο", "Μαργαρίνη", "Τυρί Edam", "Ζαμπόν"], en: ["Jam (2 varieties)", "Honey", "Butter", "Margarine", "Edam Cheese", "Ham"] },
+    breads: { gr: ["Ψωμί Λευκό-μαύρο", "Φρυγανιές"], en: ["White/Brown Bread", "Rusks"] },
+    staples: { gr: ["Αυγό", "Κέικ", "Corn Flakes (Δημητριακά)"], en: ["Egg", "Cake", "Corn Flakes (Cereal)"] },
   },
   week1: {
     monday: {
       lunch: {
-        first: ["Σούπα λαχανικών"],
-        main:  ["Κοτόπουλο λεμονάτο με ρύζι", "Κοτόπουλο μπιφτέκι με κριθαράκι λαχανικών"]
+        first: { gr: ["Σούπα λαχανικών"], en: ["Vegetable soup"] },
+        main:  { gr: ["Κοτόπουλο λεμονάτο με ρύζι", "Κοτόπουλο μπιφτέκι με κριθαράκι λαχανικών"],  en: ["Lemonade chicken with rice", "Chicken burger with vegetable barley"]  }
       },
       dinner: {
-        first: ["Τυρόπιτα"],
-        main:  ["Πέννες με σάλτσα ντομάτας", "Φασολάκια λαδερά με πατάτες"]
+        first: { gr: ["Τυρόπιτα"], en: ["Cheese pie"] },
+        main:  { gr: ["Πέννες με σάλτσα ντομάτας", "Φασολάκια λαδερά με πατάτες"],  en: ["Pennes with tomato sauce", "Green beans with potatoes"]  }
       },
-      extra: ["Γλυκό"]
+      extra: { gr: ["Γλυκό"], en: ["Sweet"] }
     },
     tuesday: {
       lunch: {
-        first: ["Ψαρόσουπα"],
-        main:  ["Φιλέτο ψαριού με πατάτες φούρνου", "Θαλασσινά με κριθαράκι"]
+        first: { gr: ["Ψαρόσουπα"], en: ["Fish soup"] },
+        main:  { gr: ["Φιλέτο ψαριού με πατάτες φούρνου", "Θαλασσινά με κριθαράκι"],  en: ["Fish fillet with baked potatoes", "Seafood with barley"]  }
       },
       dinner: {
-        first: ["Λαχανόρυζο"],
-        main:  ["Κοκκινιστό μοσχάρι με ριζότο λαχανικών", "Λουκάνικα χωριάτικα με πουρέ πατάτας"]
+        first: { gr: ["Λαχανόρυζο"], en: ["Cabbage rice"] },
+        main:  { gr: ["Κοκκινιστό μοσχάρι με ριζότο λαχανικών", "Λουκάνικα χωριάτικα με πουρέ πατάτας"],  en: ["Roast beef with vegetable risotto", "Country sausages with mashed potatoes"]  }
       },
-      extra: ["Φρούτο"]
+      extra: { gr: ["Φρούτο"], en: ["Fruit"] }
     },
     wednesday: {
       lunch: {
-        first: ["Τουρσί με ελιές και ταραμοσαλάτα"],
-        main:  ["Φακές σούπα", "Φασόλια φούρνου"]
+        first: { gr: ["Τουρσί με ελιές και ταραμοσαλάτα"], en: ["Pickled olives and taramo salad"] },
+        main:  { gr: ["Φακές σούπα", "Φασόλια φούρνου"],  en: ["Lentil soup", "Baked beans"]  }
       },
       dinner: {
-        first: ["Ριζότο μανιταριών"],
-        main:  ["Μπιφτέκι φούρνου με κουσκούς", "Γιουβαρλάκια σούπα"]
+        first: { gr: ["Ριζότο μανιταριών"], en: ["Mushroom risotto"] },
+        main:  { gr: ["Μπιφτέκι φούρνου με κουσκούς", "Γιουβαρλάκια σούπα"],  en: ["Oven burger with couscous", "Yuvarlakia soup"]  }
       },
-      extra: ["Γλυκό"]
+      extra: { gr: ["Γλυκό"], en: ["Sweet"] }
     },
     thursday: {
       lunch: {
-        first: ["Μανιταρόσουπα"],
-        main:  ["Κοπανάκια κοτόπουλο γιουβέτσι", "Κοτόπουλο σνίτσελ με ρύζι"]
+        first: { gr: ["Μανιταρόσουπα"], en: ["Mushroom soup"] },
+        main:  { gr: ["Κοπανάκια κοτόπουλο γιουβέτσι", "Κοτόπουλο σνίτσελ με ρύζι"],  en: ["Juvetsi chicken cutlets", "Chicken schnitzel with rice"]  }
       },
       dinner: {
-        first: ["Λαχανικά βραστά βουτύρου"],
-        main:  ["Χοιρινό λεμονάτο με πουρέ πατάτας", "Χοιρινά σουβλάκια με πατάτες φούρνου"]
+        first: { gr: ["Λαχανικά βραστά βουτύρου"], en: ["Vegetables boiled in butter"] },
+        main:  { gr: ["Χοιρινό λεμονάτο με πουρέ πατάτας", "Χοιρινά σουβλάκια με πατάτες φούρνου"],  en: ["Pork lemonade with mashed potatoes", "Pork skewers with baked potatoes"]  }
       },
-      extra: ["Φρούτο"]
+      extra: { gr: ["Φρούτο"], en: ["Fruit"] }
     },
     friday: {
       lunch: {
-        first: ["Μινεστρόνε"],
-        main:  ["Αρακάς λαδερός", "Βίδες με σάλτσα λαχανικών"]
+        first: { gr: ["Μινεστρόνε"], en: ["Minestrone"] },
+        main:  { gr: ["Αρακάς λαδερός", "Βίδες με σάλτσα λαχανικών"],  en: ["Oily peas", "Screws with vegetable sauce"]  }
       },
       dinner: {
-        first: ["Ριζότο λαχανικών"],
-        main:  ["Βακαλάος πανέ με ρύζι", "Χταπόδι και θαλασσινά κοκκινιστά με μακαρονάκ κοφτό"]
+        first: { gr: ["Ριζότο λαχανικών"], en: ["Vegetable risotto"] },
+        main:  { gr: ["Βακαλάος πανέ με ρύζι", "Χταπόδι και θαλασσινά κοκκινιστά με μακαρονάκ κοφτό"],  en: ["Breaded cod with rice", "Octopus and seafood braised with macaroni kofto"]  }
       },
-      extra: ["Γλυκό"]
+      extra: { gr: ["Γλυκό"], en: ["Sweet"] }
     },
     saturday: {
       lunch: {
-        first: ["Κρεατόσουπα"],
-        main:  ["Αρνάκι λεμονάτο με πατάτες φούρνου", "Χοιρινή τηγανιά με ριζότο λαχανικών"]
+        first: { gr: ["Κρεατόσουπα"], en: ["Meat soup"] },
+        main:  { gr: ["Αρνάκι λεμονάτο με πατάτες φούρνου", "Χοιρινή τηγανιά με ριζότο λαχανικών"],  en: ["Lemon lamb with baked potatoes", "Pork fry with vegetable risotto"]  }
       },
       dinner: {
-        first: ["Σπανακόρυζο"],
-        main:  ["Κοτόπουλο φούρνου με ρύζι", "Μπουκιές κοτόπουλο ι παναρισμένες με πουρέ πατάτας"]
+        first: { gr: ["Σπανακόρυζο"], en: ["Spinach with rice"] },
+        main:  { gr: ["Κοτόπουλο φούρνου με ρύζι", "Μπουκιές κοτόπουλο ι παναρισμένες με πουρέ πατάτας"],  en: ["Baked chicken with rice", "Breaded chicken bites with mashed potatoes"]  }
       },
-      extra: ["Φρούτο"]
+      extra: { gr: ["Φρούτο"], en: ["Fruit"] }
     },
     sunday: {
       lunch: {
-        first: ["Χορτόσουπα"],
-        main:  ["Σουτζουκάκια κοκκινιστά με κριθαράκι", "Σάλτσα κιμά με ζυμαρικά"]
+        first: { gr: ["Χορτόσουπα"], en: ["Vegetable soup"] },
+        main:  { gr: ["Σουτζουκάκια κοκκινιστά με κριθαράκι", "Σάλτσα κιμά με ζυμαρικά"],  en: ["Souzoukaki fried with barley", "Minced meat sauce with pasta"]  }
       },
       dinner: {
-        first: ["Σπανακόπιτα"],
-        main:  ["Ομελέτα με πατάτες και τυριά", "Φασολάδα"]
+        first: { gr: ["Σπανακόπιτα"], en: ["Spinach pie"] },
+        main:  { gr: ["Ομελέτα με πατάτες και τυριά", "Φασολάδα"],  en: ["Omelet with potatoes and cheeses", "Bean soup"]  }
       },
-      extra: ["Γλυκό"]
+      extra: { gr: ["Γλυκό"], en: ["Sweet"] }
     },
   },
   week2: {
     monday: {
       lunch: {
-        first: ["Κρεατόσουπα"],
-        main:  ["Μοσχαράκι κοκκινιστό με κριθαράκι", "Χοιρινές πανσέτες με πουρέ πατάτας"]
+        first: { gr: ["Κρεατόσουπα"], en: ["Meat soup"] },
+        main:  { gr: ["Μοσχαράκι κοκκινιστό με κριθαράκι", "Χοιρινές πανσέτες με πουρέ πατάτας"],  en: ["Braised veal with barley", "Pork pancetta with mashed potatoes"]  }
       },
       dinner: {
-        first: ["Μανιταρόσουπα"],
-        main:  ["Ζυμαρικά με λευκή σάλτσα μανιταριών", "Σπανακόρυζο"]
+        first: { gr: ["Μανιταρόσουπα"], en: ["Mushroom soup"] },
+        main:  { gr: ["Ζυμαρικά με λευκή σάλτσα μανιταριών", "Σπανακόρυζο"],  en: ["Pasta with white mushroom sauce", "Spinach with rice"]  }
       },
-      extra: ["Γλυκό"]
+      extra: { gr: ["Γλυκό"], en: ["Sweet"] }
     },
     tuesday: {
       lunch: {
-        first: ["Κοτόσουπα"],
-        main:  ["Κοτόπουλο με σάλτσα μουστάρδας και πατάτες φούρνου", "Κοπανάκια κοτόπουλο με σάλτσα BBQ και ρύζι"]
+        first: { gr: ["Κοτόσουπα"], en: ["Chicken soup"] },
+        main:  { gr: ["Κοτόπουλο με σάλτσα μουστάρδας και πατάτες φούρνου", "Κοπανάκια κοτόπουλο με σάλτσα BBQ και ρύζι"],  en: ["Chicken with mustard sauce and baked potatoes", "Chicken pieces with BBQ sauce and rice"]  }
       },
       dinner: {
-        first: ["Τυρόπιτα"],
-        main:  ["Κεφτεδάκια κοκκινιστά με ριζότο λαχανικών", "Πέννες με σάλτσα κιμά"]
+        first: { gr: ["Τυρόπιτα"], en: ["Cheese pie"] },
+        main:  { gr: ["Κεφτεδάκια κοκκινιστά με ριζότο λαχανικών", "Πέννες με σάλτσα κιμά"],  en: ["Fried meatballs with vegetable risotto", "Penne with minced meat sauce"]  }
       },
-      extra: ["Φρούτο"]
+      extra: { gr: ["Φρούτο"], en: ["Fruit"] }
     },
     wednesday: {
       lunch: {
-        first: ["Σούπα Λαχανικών"],
-        main:  ["Φασόλια σούπα", "Φακόρυζο"]
+        first: { gr: ["Σούπα Λαχανικών"], en: ["Vegetable soup"] },
+        main:  { gr: ["Φασόλια σούπα", "Φακόρυζο"],  en: ["Bean soup", "Fakoryzo"]  }
       },
       dinner: {
-        first: ["Ντοματόσουπα"],
-        main:  ["Χοιρινό ψητό με σάλτσα λεμονιού και κουσκούς", "Λουκάνικα χωριάτικα με λαχανικά και κόκκινη σάλτσα (Σπετσοφάι)"]
+        first: { gr: ["Ντοματόσουπα"], en: ["Tomato soup"] },
+        main:  { gr: ["Χοιρινό ψητό με σάλτσα λεμονιού και κουσκούς", "Λουκάνικα χωριάτικα με λαχανικά και κόκκινη σάλτσα (Σπετσοφάι)"],  en: ["Roast pork with lemon sauce and couscous", "Country sausages with vegetables and red sauce (Spetsofai)"]  }
       },
-      extra: ["Γλυκό"]
+      extra: { gr: ["Γλυκό"], en: ["Sweet"] }
     },
     thursday: {
       lunch: {
-        first: ["Ψαρόσουπα"],
-        main:  ["Ψάρι φιλέτο με βραστά λαχανικά", "Ριζότο με σάλτσα θαλασσινών"]
+        first: { gr: ["Ψαρόσουπα"], en: ["Fish soup"] },
+        main:  { gr: ["Ψάρι φιλέτο με βραστά λαχανικά", "Ριζότο με σάλτσα θαλασσινών"],  en: ["Fish fillet with boiled vegetables", "Risotto with seafood sauce"]  }
       },
       dinner: {
-        first: ["Τραχανάς"],
-        main:  ["Κοτόπουλο ψητό με κριθαράκι λαχανικών", "Μπιφτέκι κοτόπουλο με πουρέ πατάτας"]
+        first: { gr: ["Τραχανάς"], en: ["Frumenty"] },
+        main:  { gr: ["Κοτόπουλο ψητό με κριθαράκι λαχανικών", "Μπιφτέκι κοτόπουλο με πουρέ πατάτας"],  en: ["Roast chicken with vegetable barley", "Chicken burger with mashed potatoes"]  }
       },
-      extra: ["Φρούτο"]
+      extra: { gr: ["Φρούτο"], en: ["Fruit"] }
     },
     friday: {
       lunch: {
-        first: ["Σούπα Μινεστρόνε"],
-        main:  ["Πρασσόρυζο", "Σουφλέ ζυμαρικών με τυριά"]
+        first: { gr: ["Σούπα Μινεστρόνε"], en: ["Minestrone soup"] },
+        main:  { gr: ["Πρασσόρυζο", "Σουφλέ ζυμαρικών με τυριά"],  en: ["Prassorizo", "Pasta souffle with cheeses"]  }
       },
       dinner: {
-        first: ["Χορτόσουπα"],
-        main:  ["Ρεβίθια σούπα", "Ομελέτα φούρνου με τυριά"]
+        first: { gr: ["Χορτόσουπα"], en: ["Vegetable soup"] },
+        main:  { gr: ["Ρεβίθια σούπα", "Ομελέτα φούρνου με τυριά"],  en: ["Chickpea soup", "Baked omelette with cheeses"]  }
       },
-      extra: ["Γλυκό"]
+      extra: { gr: ["Γλυκό"], en: ["Sweet"] }
     },
     saturday: {
       lunch: {
-        first: ["Λαχανόρυζο"],
-        main:  ["Ψάρι φιλέτο λεμονάτο με ριζότο λαχανικών", "Γιουβέτσι θαλασσινών"]
+        first: { gr: ["Λαχανόρυζο"], en: ["Cabbage rice"] },
+        main:  { gr: ["Ψάρι φιλέτο λεμονάτο με ριζότο λαχανικών", "Γιουβέτσι θαλασσινών"],  en: ["Lemon fillet fish with vegetable risotto", "Seafood Juvetsi"]  }
       },
       dinner: {
-        first: ["Κριθαρότο λαχανικών"],
-        main:  ["Κοτόπουλο μπιφτέκι με πατάτες φούρνου", "Κοτόπουλο παναρισμένο με ρύζι"]
+        first: { gr: ["Κριθαρότο λαχανικών"], en: ["Vegetable porridge"] },
+        main:  { gr: ["Κοτόπουλο μπιφτέκι με πατάτες φούρνου", "Κοτόπουλο παναρισμένο με ρύζι"],  en: ["Chicken burger with baked potatoes", "Breaded chicken with rice"]  }
       },
-      extra: ["Φρούτο"]
+      extra: { gr: ["Φρούτο"], en: ["Fruit"] }
     },
     sunday: {
       lunch: {
-        first: ["Κοτόσουπα"],
-        main:  ["Αρνάκι φούρνου με ρύζι", "Χοιρινά σουβλάκια με πατάτες φούρνου"]
+        first: { gr: ["Κοτόσουπα"], en: ["Chicken soup"] },
+        main:  { gr: ["Αρνάκι φούρνου με ρύζι", "Χοιρινά σουβλάκια με πατάτες φούρνου"],  en: ["Baked lamb with rice", "Pork skewers with baked potatoes"]  }
       },
       dinner: {
-        first: ["Λαχανικά βραστά βουτύρου"],
-        main:  ["Μπιφτέκι φούρνου με πουρέ πατάτας", "Παστίτσιο"]
+        first: { gr: ["Λαχανικά βραστά βουτύρου"], en: ["Vegetables boiled in butter"] },
+        main:  { gr: ["Μπιφτέκι φούρνου με πουρέ πατάτας", "Παστίτσιο"],  en: ["Baked burger with mashed potatoes", "Pasticcio"]  }
       },
-      extra: ["Γλυκό"]
+      extra: { gr: ["Γλυκό"], en: ["Sweet"] }
     },
   },
 };

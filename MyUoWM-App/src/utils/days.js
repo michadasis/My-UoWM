@@ -17,3 +17,13 @@ export const greekDays = {
   saturday: "Σάββατο",
   sunday: "Κυριακή",
 };
+
+export const englishDays = {
+  monday: "Monday",
+  tuesday: "Tuesday",
+  wednesday: "Wednesday",
+  thursday: "Thursday",
+  friday: "Friday",
+  saturday: "Saturday",
+  sunday: "Sunday",
+};

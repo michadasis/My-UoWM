@@ -6,12 +6,14 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { TimeIcon } from "@chakra-ui/icons";
+import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 import { menu } from "../assets/data/restaurantMenu";
-import { dayKeys, greekDays } from "../utils/days";
+import { dayKeys, greekDays, englishDays } from "../utils/days";
 import { getPreviousWeekKey } from "../utils/date";
 
 export default function RestaurantUniversity() {
+  const { t } = useTranslation();
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -19,6 +21,8 @@ export default function RestaurantUniversity() {
   const weekKey = getPreviousWeekKey();
   const dayKey = dayKeys[new Date().getDay()];
   const todayMenu = menu[weekKey][dayKey];
+  const lang = i18n.language === "el" ? "gr" : "en";
+  const dayLabel = lang === "gr" ? greekDays[dayKey] : englishDays[dayKey];
 
   return (
     <Flex
@@ -27,7 +31,7 @@ export default function RestaurantUniversity() {
       flexDirection="column"
       alignItems="center"
     >
-      {/* Wrapper container*/}
+      {/*Wrapper container*/}
       <Flex
         textAlign="center"
         flexDirection="column"
@@ -56,33 +60,34 @@ export default function RestaurantUniversity() {
             color={useColorModeValue("#f3f3f3", "black")}
             fontFamily="Syne"
           >
-          <Box mt="1rem" w="100%">
-            <Text
-              fontSize={{ base: "xl", lg: "3xl" }}
-              fontWeight="bold"
-              mb="0.25rem"
-            >
-            Πρόγραμμα Εστιατορίου
-            </Text>
-            <Text
-              fontSize={{ base: "md", lg: "lg" }}
-              fontWeight="semibold"
-              mt="0.25rem"
-            >
-            Σήμερα: {greekDays[dayKey]}
-            </Text>
-            <Text
-              fontSize={{ base: "md", lg: "lg" }}
-              fontWeight="semibold"
-              mt="0.25rem"
-            >
-            Έχει συνοδευτικό: {todayMenu.extra}
-            </Text>
+            <Box mt="1rem" w="100%">
+              <Text
+                fontSize={{ base: "xl", lg: "3xl" }}
+                fontWeight="bold"
+                mb="0.25rem"
+              >
+                {t("restaurantTitle")}
+              </Text>
+              <Text
+                fontSize={{ base: "md", lg: "lg" }}
+                fontWeight="semibold"
+                mt="0.25rem"
+              >
+                {t("today")}: {dayLabel}
+              </Text>
+              <Text
+                fontSize={{ base: "md", lg: "lg" }}
+                fontWeight="semibold"
+                mt="0.25rem"
+              >
+                {t("extra")}: {todayMenu.extra[lang].join(", ")}
+              </Text>
             </Box>
-            </Flex>
-            </Box>
-            {/*Πρωινό*/}
-            <Box
+          </Flex>
+        </Box>
+
+        {/*Πρωινό*/}
+        <Box
           border="2px"
           borderRadius="1rem"
           borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
@@ -100,23 +105,23 @@ export default function RestaurantUniversity() {
           >
             <Flex alignItems="center">
               <Text ml="1rem" fontSize={{ base: "lg", lg: "2xl" }} fontWeight="bold">
-                Πρωινό
+                {t("breakfast")}
               </Text>
             </Flex>
-              <Text mt="0.5rem">
-                <b>Ποτα: </b>{menu.breakfast.drinks.join(", ")}
-              </Text>
-              <Text mt="0.5rem">
-                <b>Ψωμιά: </b>{menu.breakfast.breads.join(", ")}
-              </Text>
-              <Text mt="0.5rem">
-                <b>Αλείμματα: </b>{menu.breakfast.spreads.join(", ")}
-              </Text>
-              <Text mt="0.5rem">
-                <b>Διάφορα: </b>{menu.breakfast.staples.join(", ")}
-              </Text>
-            </Flex>
-            </Box>
+            <Text mt="0.5rem">
+              <b>{t("drinks")}: </b>{menu.breakfast.drinks[lang].join(", ")}
+            </Text>
+            <Text mt="0.5rem">
+              <b>{t("breads")}: </b>{menu.breakfast.breads[lang].join(", ")}
+            </Text>
+            <Text mt="0.5rem">
+              <b>{t("spreads")}: </b>{menu.breakfast.spreads[lang].join(", ")}
+            </Text>
+            <Text mt="0.5rem">
+              <b>{t("staples")}: </b>{menu.breakfast.staples[lang].join(", ")}
+            </Text>
+          </Flex>
+        </Box>
 
             {/*Μεσημεριανό*/}
         <Box
@@ -135,21 +140,22 @@ export default function RestaurantUniversity() {
             color={useColorModeValue("#f3f3f3", "black")}
             fontFamily="Syne"
           >
-              <Flex alignItems="center">
+            <Flex alignItems="center">
               <Text ml="1rem" fontSize={{ base: "lg", lg: "2xl" }} fontWeight="bold">
-                Μεσημεριανό
+                {t("lunch")}
               </Text>
             </Flex>
-              <Text mt="0.5rem">
-                <b>Πρώτο Πιάτο:</b> {todayMenu.lunch.first.join(", ")}
-              </Text>
-              <Text mt="0.25rem">
-                <b>Κυρίως Πιάτο:</b> {todayMenu.lunch.main.join(", ")}
-              </Text>
-            </Flex>
-            </Box>
-            {/*Άπογευματινο*/}
-            <Box
+            <Text mt="0.5rem">
+              <b>{t("firstCourse")}:</b> {todayMenu.lunch.first[lang].join(", ")}
+            </Text>
+            <Text mt="0.25rem">
+              <b>{t("mainCourse")}:</b> {todayMenu.lunch.main[lang].join(", ")}
+            </Text>
+          </Flex>
+        </Box>
+
+        {/*Άπογευματινο*/}
+        <Box
           border="2px"
           borderRadius="1rem"
           borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
@@ -165,20 +171,20 @@ export default function RestaurantUniversity() {
             color={useColorModeValue("#f3f3f3", "black")}
             fontFamily="Syne"
           >
-              <Flex alignItems="center">
+            <Flex alignItems="center">
               <Text ml="1rem" fontSize={{ base: "lg", lg: "2xl" }} fontWeight="bold">
-                Απογευματινό
+                {t("dinner")}
               </Text>
             </Flex>
-              <Text mt="0.5rem">
-                <b>Πρώτο Πιάτο:</b> {todayMenu.dinner.first.join(", ")}
-              </Text>
-              <Text mt="0.25rem">
-                <b>Κυρίως Πιάτο:</b> {todayMenu.dinner.main.join(", ")}
-              </Text>
-            </Flex>
-            </Box>
-  
+            <Text mt="0.5rem">
+              <b>{t("firstCourse")}:</b> {todayMenu.dinner.first[lang].join(", ")}
+            </Text>
+            <Text mt="0.25rem">
+              <b>{t("mainCourse")}:</b> {todayMenu.dinner.main[lang].join(", ")}
+            </Text>
+          </Flex>
+        </Box>
+
         {/*Ωραριο*/}
         <Box
           border="2px"
@@ -203,26 +209,25 @@ export default function RestaurantUniversity() {
             <Flex alignItems="center">
               <TimeIcon w={30} h={30} />
               <Text ml="1rem" fontSize={{ base: "lg", lg: "2xl" }} fontWeight="bold">
-                {i18n.t("orario")}
+                {t("orario")}
               </Text>
             </Flex>
 
             <Flex mt="1rem">
               <Text fontWeight="bold" mr="0.5rem">
-                Πρωινό:
+                {t("breakfast")}:
               </Text>
               <Text>7:00 – 9:00</Text>
             </Flex>
             <Flex mt="0.5rem">
               <Text fontWeight="bold" mr="0.5rem">
-                Μεσημεριανό:
+                {t("lunch")}:
               </Text>
               <Text>12:00 – 16:00</Text>
             </Flex>
-
             <Flex mt="0.5rem">
               <Text fontWeight="bold" mr="0.5rem">
-                Απογευματινό:
+                {t("dinner")}:
               </Text>
               <Text>18:00 – 21:00</Text>
             </Flex>
