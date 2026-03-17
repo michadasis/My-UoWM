@@ -223,7 +223,7 @@ export default function RestaurantUniversity() {
               <Text fontWeight="bold" mr="0.5rem">
                 {t("lunch")}:
               </Text>
-              <Text>12:00 – 16:00</Text>
+              <Text>12:00 – 16:30</Text>
             </Flex>
             <Flex mt="0.5rem">
               <Text fontWeight="bold" mr="0.5rem">
