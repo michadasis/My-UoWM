@@ -36,58 +36,61 @@
 
 */
 
-import i18n from "../../i18n"
-import BergadosImg from "../assets/images/DimitriosIBergados.jpg";
-import GiannisKeppas from "../assets/images/GiannisKeppas.jpg";
-import panagiotatax from  "../assets/images/panagiotatax.jpg";
-import GiorgosKokkinos from "../assets/images/GiorgosKokkinos.jpg";
-import sotiris from  "../assets/images/sotiris.jpg";
-import VanaP from "../assets/images/VanaP.JPG";
-import DimPapakonstantinou from "../assets/images/Papakonstantinou.jpg"
+import i18n from '../../i18n'
+import BergadosImg from '../assets/images/DimitriosIBergados.jpg'
+import GiannisKeppas from '../assets/images/GiannisKeppas.jpg'
+import panagiotatax from '../assets/images/panagiotatax.jpg'
+import GiorgosKokkinos from '../assets/images/GiorgosKokkinos.jpg'
+import sotiris from '../assets/images/sotiris.jpg'
+import VanaP from '../assets/images/VanaP.jpeg'
+import DimPapakonstantinou from '../assets/images/Papakonstantinou.jpg'
 
 const UoWMMembers = [
-  {
-    name: i18n.t("vergados"),
-    email: "mailto:dvergados@uowm.gr",
-    img: BergadosImg,
-  },
-  {
-    name: i18n.t("giannis"),
-    socialMedia: "https://www.linkedin.com/in/giannis-kepas/",
-    email: "mailto:gkepas@ieee.org",
-    img: GiannisKeppas,
-  },
-  {
-    name: i18n.t("panagiotis"),
-    socialMedia: "https://www.linkedin.com/in/panagiotis-papantonis/",
-    email: "mailto:panagiotispapantonis1@gmail.com",
-    img: "https://avatars.githubusercontent.com/u/103947010?v=4",
-  },
-  {
-    name: i18n.t("vana"),
-    socialMedia: "https://www.linkedin.com/in/vana-panagiotidou-aabba430a/",
-    img: VanaP,
-  },
-  {
-    name: i18n.t("panagiota"),
-    socialMedia: "https://www.linkedin.com/in/taxiarchi-panagiota-20658b389",
-    img: panagiotatax,
-  },
-  {
-    name: i18n.t("dimitris"),
-    socialMedia: "https://www.linkedin.com/in/dimitrios-papakonstantinou-44a7672b3",
-    img: DimPapakonstantinou,
-  },
-  {
-    name: i18n.t("sotiris"),
-    socialMedia: "https://www.linkedin.com/in/sotiris-zacharopoulos-703147257",
-    img: sotiris,
-  },
-  {
-    name: i18n.t("giorgos"),
-    socialMedia: "",
-    img: GiorgosKokkinos,
-  },
-];
+    {
+        name: i18n.t('vergados'),
+        email: 'mailto:dvergados@uowm.gr',
+        img: BergadosImg,
+    },
+    {
+        name: i18n.t('giannis'),
+        socialMedia: 'https://www.linkedin.com/in/giannis-kepas/',
+        email: 'mailto:gkepas@ieee.org',
+        img: GiannisKeppas,
+    },
+    {
+        name: i18n.t('panagiotis'),
+        socialMedia: 'https://www.linkedin.com/in/panagiotis-papantonis/',
+        email: 'mailto:panagiotispapantonis1@gmail.com',
+        img: 'https://avatars.githubusercontent.com/u/103947010?v=4',
+    },
+    {
+        name: i18n.t('vana'),
+        socialMedia: 'https://www.linkedin.com/in/vana-panagiotidou-aabba430a/',
+        img: VanaP,
+    },
+    {
+        name: i18n.t('panagiota'),
+        socialMedia:
+            'https://www.linkedin.com/in/taxiarchi-panagiota-20658b389',
+        img: panagiotatax,
+    },
+    {
+        name: i18n.t('dimitris'),
+        socialMedia:
+            'https://www.linkedin.com/in/dimitrios-papakonstantinou-44a7672b3',
+        img: DimPapakonstantinou,
+    },
+    {
+        name: i18n.t('sotiris'),
+        socialMedia:
+            'https://www.linkedin.com/in/sotiris-zacharopoulos-703147257',
+        img: sotiris,
+    },
+    {
+        name: i18n.t('giorgos'),
+        socialMedia: '',
+        img: GiorgosKokkinos,
+    },
+]
 
-export default UoWMMembers;
+export default UoWMMembers
