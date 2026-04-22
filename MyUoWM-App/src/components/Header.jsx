@@ -45,6 +45,7 @@ import { Categories } from "../assets/ConfigRoutes";
 import { LeftArrowIcon } from "../assets/icons";
 import HomeIcon from "../assets/icons/HomeIcon";
 import i18n from "../i18n";
+import { colors } from "../theme/theme";
 function RouteDictionary(route) {
   if (route === "/") return i18n.t("initial_page");
   else {
@@ -60,6 +61,7 @@ export default function Header() {
   const [currentName, setCurrentName] = useState(RouteDictionary(loc.pathname));
   useEffect(() => {
     setCurrentName(RouteDictionary(`${loc.pathname}`));
+    window.scrollTo(0, 0);
   }, [loc]);
 
   const goToHomePage = () => {
@@ -69,7 +71,7 @@ export default function Header() {
   return (
     <>
       <Flex
-        bgColor={useColorModeValue("#f3f3f3", "black")}
+        bgColor={useColorModeValue(colors.lightBg, "black")}
         position={{ sm: "relative", lg: "sticky" }}
         direction="row"
         w="100%"
@@ -121,7 +123,7 @@ export default function Header() {
           >
             <Heading
               fontSize={{ sm: 32, lg: 34 }}
-              color={useColorModeValue("black", "#f3f3f3")}
+              color={useColorModeValue("black", colors.lightBg)}
               fontWeight={500}
               fontFamily="Syne"
             >

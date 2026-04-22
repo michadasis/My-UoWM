@@ -5,11 +5,9 @@ import i18n from "../../i18n";
 function DepartmentPicker({ onClose }) {
   const departments = useDepartments();
   const { depName, depCode, setDepCode } = useDepName();
-  console.log("Current Department: " + depName);
   const handleChange = (e) => {
     e.preventDefault();
     let selectedDepartment = e.target.selectedOptions[0].value;
-    console.log("Selecting: " + selectedDepartment);
     setDepCode(selectedDepartment);
     onClose();
   };

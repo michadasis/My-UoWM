@@ -40,10 +40,8 @@ import React from "react";
 import Guide from "../components/freshmen/Guide.jsx";
 import GuideButton from "../components/freshmen/GuideButton.jsx";
 import { useGuidesMdData } from "../hooks/useGuidesMdData.js";
-import { useScrollToTopOnLoad } from "../hooks/useScrollToTopOnLoad";
-
+import { colors } from "../theme/theme";
 function ButtonListPage() {
-  useScrollToTopOnLoad();
   const { guideMd, firstYearGuidesTranslated, fetchGuideByPath, setGuideMd } =
     useGuidesMdData();
 
@@ -73,8 +71,8 @@ function ButtonListPage() {
                 {/* Last item should not have a divider on the bottom */}
                 {index !== firstYearGuidesTranslated.length - 1 ? (
                   <Divider
-                    borderColor="#00ABC1"
-                    _dark={{ borderColor: "#f3f3f3" }}
+                    borderColor={colors.primary}
+                    _dark={{ borderColor: colors.lightBg }}
                     w="100%"
                     borderBottomWidth={2}
                     opacity={1}

@@ -38,25 +38,22 @@
 
 import { extendTheme } from "@chakra-ui/react";
 
+export const colors = {
+  primary: "#00ABC1",
+  lightBg: "#f3f3f3",
+  darkBg: "black",
+  darkAccent: "#F4B042",
+  lightText: "black",
+  darkText: "white",
+};
+
 export const customTheme = extendTheme({
   colors: {
     brand: {
-      light: {
-        text: "black",
-        primary: "#00ABC1",
-        secondary: "#f3f3f3"
-      },
-      dark: {
-        text: "white",
-        primary: "black",
-        secondary: "#F4B042"
-      }
-    }
+      light: { text: colors.lightText, primary: colors.primary, secondary: colors.lightBg },
+      dark:  { text: colors.darkText,  primary: colors.darkBg,  secondary: colors.darkAccent },
+    },
   },
-  fonts: {
-
-  },
-  fontSizes: {},
   breakpoints: {
     sm: "320px",
     md: "768px",
@@ -66,7 +63,5 @@ export const customTheme = extendTheme({
     "3xl": "1920px",
   },
 });
-
-const theme = extendTheme({ customTheme });
 
 export default customTheme;

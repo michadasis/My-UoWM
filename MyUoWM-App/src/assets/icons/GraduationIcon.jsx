@@ -1,4 +1,5 @@
 import React from "react";
+import { colors } from "../../theme/theme";
 
 function GraduationIcon() {
   return (
@@ -10,7 +11,7 @@ function GraduationIcon() {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       fill="none"
-      stroke="#f3f3f3"
+      stroke={colors.lightBg}
       strokeWidth="14"
     >
       <g

@@ -41,10 +41,9 @@ import { Accordion, Box, Text, Flex } from "@chakra-ui/react";
 import Schedule from "../components/restaurant/Schedule";
 import TodaysMenu from "../components/restaurant/TodaysRestaurantMenu";
 import i18n from "../../src/i18n";
-import { useWeeklyRestaurantMenu, useScrollToTopOnLoad } from "../hooks";
+import { useWeeklyRestaurantMenu } from "../hooks";
 export default function RestauranPage() {
   const weeklyRestaurantMenu = useWeeklyRestaurantMenu();
-  useScrollToTopOnLoad();
 
   return (
     <Flex direction="column" align="center">

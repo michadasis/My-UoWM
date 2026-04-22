@@ -50,6 +50,7 @@ import { useNavigate } from "react-router-dom";
 import { DiagonalRightArrowIcon, RightArrowIcon } from "../assets/icons";
 import { useDepName, useDepartments } from "../hooks";
 import i18n from "../i18n";
+import { colors } from "../theme/theme";
 
 export default function MenuBox({ category }) {
   const { title, iconSVG, route, span, isExternal, requireSelection } =
@@ -82,9 +83,7 @@ export default function MenuBox({ category }) {
 
   const handleNavigation = () => {
     isExternal
-        ? requireSelection
-            ? window.location.replace(route, "_blank")
-            : window.open(route, "_blank")
+        ? window.open(route, "_blank", "noopener,noreferrer")
         : navigate(route);
   };
 
@@ -124,8 +123,8 @@ export default function MenuBox({ category }) {
           flexDirection="column"
           alignItems="center"
           justifyContent="space-between"
-          borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
-          backgroundColor={useColorModeValue("#00ABC1", "transparent")}
+          borderColor={useColorModeValue(colors.primary, colors.lightBg)}
+          backgroundColor={useColorModeValue(colors.primary, "transparent")}
           className={`menu-box span-${span}`}
           rounded="0.75rem"
           p={{ sm: 2, md: 4, lg: 6 }}>
@@ -155,7 +154,7 @@ export default function MenuBox({ category }) {
         </Flex>
         <Heading
             fontSize={{ sm: 11.95, md: 16, lg: 26, xl: 32 }}
-            color="#f3f3f3"
+            color={colors.lightBg}
             w="100%"
             fontWeight={500}
             fontFamily="Syne">

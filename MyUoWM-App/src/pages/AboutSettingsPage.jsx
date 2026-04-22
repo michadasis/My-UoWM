@@ -59,7 +59,7 @@ function AboutSettingsPage() {
       <Text marginTop="1em" fontSize={{ sm: 26, md: 30, lg: 34, xl: 38 }}>
         myCS.uowm
         <br />
-        Έκδοση v1.0.0
+        Έκδοση v2.0.0
         <br />
         <br />
       </Text>
@@ -80,7 +80,7 @@ function AboutSettingsPage() {
           >
             <ProjectMembersList
               heading="Η ομάδα ανάπτυξης του myCS.uowm"
-              membersList={UoWMMembers}
+              subsections={UoWMMembers}
             />
             <ProjectMembersList
               heading="Η ομάδα ανάπτυξης του myUoM"

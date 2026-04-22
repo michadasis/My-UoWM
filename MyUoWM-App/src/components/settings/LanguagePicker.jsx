@@ -55,7 +55,6 @@ function UKFlag({ onClick }) {
 
 function LanguagePicker() {
   const changeLanguage = (lng) => {
-    console.log("Changing language to: ", lng)
     if (i18n.language === lng) {
       //can react somehow to this, user mistakenly clicked the same language
       return;

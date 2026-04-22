@@ -40,14 +40,14 @@ import { Box, Heading } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDepName, useScheduleData } from "../hooks";
+import i18n from "../i18n";
 
 export default function SchedulePage({ examsProp, semesterProp }) {
   const { depCode } = useDepName();
   const navigate = useNavigate();
   const scheduleData = useScheduleData(depCode);
-  console.log("scheduleData", scheduleData, "depName: ", depCode);
   const redirectTo = (link) => {
-    window.open(link);
+    window.open(link, "_blank", "noopener,noreferrer");
     navigate("/");
   };
 
@@ -65,11 +65,11 @@ export default function SchedulePage({ examsProp, semesterProp }) {
     <Box>
       {scheduleData ? (
         <Heading textAlign="center" marginTop="50px">
-          Γίνεται ανακατεύθυνση...
+          {i18n.t("redirecting")}
         </Heading>
       ) : (
         <Heading textAlign="center" marginTop="50px">
-          Παρακαλώ επιλέξτε τμήμα από τις ρυθμίσεις.
+          {i18n.t("error_description")}
         </Heading>
       )}
     </Box>

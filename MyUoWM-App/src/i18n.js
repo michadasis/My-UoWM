@@ -44,13 +44,14 @@ const resources = {
       ...studentCare,
       ...enUoWMMembers,
       //categories.js
+      search_no_results: "No results found.",
+      redirecting: "Redirecting...",
       eudoxus: "Eudoxus",
       Services : "Services",
       NocSupplies : "NOC Services",
       studentClubs: "Student Clubs",
       current_department: "Current Department: ",
       close: "Close",
-      eudoxus: "Eudoxus",
       initial_page: "Home",
       course_schedule: "Course Schedules",
       restaurant: "Restaurant",
@@ -132,13 +133,14 @@ const resources = {
       ...elUoWMMembers,
 
       //categories.js
+      search_no_results: "Η αναζήτηση δεν επέστρεψε αποτελέσματα.",
+      redirecting: "Γίνεται ανακατεύθυνση...",
       eudoxus: "Εύδοξος",
       Services : "Υπηρεσίες",
       NocSupplies : "Υπηρεσίες NOC",
       studentClubs: "Φοιτητικοί Σύλλογοι",
       current_department: "Έχεις επιλέξει: ",
       close: "Κλείσιμο",
-      eudoxus: "Εύδοξος",
       initial_page: "Αρχική",
       course_schedule: "Πρόγραμμα Μαθημάτων",
       restaurant: "Εστιατόριο",
@@ -203,23 +205,12 @@ const resources = {
     TheatrikhOmada: "Θεατρική Ομάδα",
     },
   },
-  de: {
-    translation: {
-      initial_page: "Startseite",
-      course_schedule: "Kursplan",
-      restaurant: "Restaurant",
-      library: "Bibliothek",
-      announcements: "Ankündigungen",
-      orkomosies: "Einweihungen",
-      foititiki_merimna: "Studentenpflege",
-    },
-  },
 };
 const defaultLang = localStorage.getItem("preferred_language")
 i18n.use(initReactI18next).init({
   // debug: true,
   resources,
-  whitelist: ["en", "el"],
+  supportedLngs: ["en", "el"],
   lng: defaultLang,
   fallbackLng: "en",
   interpolation: {

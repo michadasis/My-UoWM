@@ -10,10 +10,11 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { SocialIcon } from "react-social-icons";
+import { colors } from "../theme/theme";
 
 export default function ProjectMembersCard({ data }) {
   const SelectBorderColor = () => {
-    return useColorModeValue("#00ABC1", "#f3f3f3");
+    return useColorModeValue(colors.primary, colors.lightBg);
   };
 
   const SelectItemColor = () => {

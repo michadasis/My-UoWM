@@ -38,6 +38,7 @@
 import React from 'react';
 import { Flex, Box, useColorModeValue } from "@chakra-ui/react";
 import i18n from "../i18n";
+import { colors } from "../theme/theme";
 
 function MapPage() {
   const containerStyle = {
@@ -58,8 +59,8 @@ function MapPage() {
       <Box
           border="2px"
           borderRadius="1rem"
-          borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
-          bg={useColorModeValue("#00ABC1", "#f3f3f3")}
+          borderColor={useColorModeValue(colors.primary, colors.lightBg)}
+          bg={useColorModeValue(colors.primary, colors.lightBg)}
           marginBottom={{ base: "1rem", lg: "0" }}
           marginTop="1rem"
           display={"flex"}
@@ -76,7 +77,7 @@ function MapPage() {
             rowGap={"0.75rem"}
             justifyContent={"center"}
             columnGap={"1rem"}
-            color={useColorModeValue("#f3f3f3", "black")}
+            color={useColorModeValue(colors.lightBg, "black")}
             fontFamily="Syne"
             w="100%"
             fontSize={{ base: "md", lg: "2xl" }}

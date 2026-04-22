@@ -40,10 +40,9 @@ import { useState } from "react";
 import { Categories } from "../assets/ConfigRoutes";
 import MenuBox from "../components/MenuBox";
 import { Flex, Grid, Heading } from "@chakra-ui/react";
+import i18n from "../i18n";
 
 import { motion } from "framer-motion";
-import { useScrollToTopOnLoad } from "../hooks/useScrollToTopOnLoad";
-
 const stagger = {
   inView: {
     transition: {
@@ -66,7 +65,6 @@ export default function HomePage() {
   const categoriesSorted = sortToPlaceInDefinedOrder(Categories);
   const categoriesSortedAndWithoutHiddenPages =
     filterOutHiddenPages(categoriesSorted);
-  useScrollToTopOnLoad();
   return (
     <Flex
       direction="column"
@@ -96,7 +94,7 @@ export default function HomePage() {
             fontWeight={500}
             fontFamily="Syne"
           >
-            Η αναζήτηση δεν επέστρεψε αποτελέσματα.
+            {i18n.t("search_no_results")}
           </Heading>
         ) : null}
         {categoriesSortedAndWithoutHiddenPages.map((category) => (

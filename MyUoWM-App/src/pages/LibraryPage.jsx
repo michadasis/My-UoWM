@@ -40,6 +40,7 @@ import { Flex, Box, Text, Button, useColorModeValue } from "@chakra-ui/react";
 import i18n from "../i18n";
 import { TimeIcon, PhoneIcon } from "@chakra-ui/icons";
 import { LIBRARY_OPENING_HOURS, LIBRARY_PHONE_LIST } from "../assets/data/Library";
+import { colors } from "../theme/theme";
 
 export default function LibraryPage() {
   React.useEffect(() => {
@@ -68,8 +69,8 @@ export default function LibraryPage() {
         <Box
           border="2px"
           borderRadius="1rem"
-          bg={useColorModeValue("#00ABC1", "#f3f3f3")}
-          borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
+          bg={useColorModeValue(colors.primary, colors.lightBg)}
+          borderColor={useColorModeValue(colors.primary, colors.lightBg)}
           marginBottom={{ base: "1rem", lg: "0" }}
           marginTop="1rem"
           px="1.5rem"
@@ -87,7 +88,7 @@ export default function LibraryPage() {
             fontFamily="Syne"
             w="100%"
             fontSize={{ base: "md", lg: "xl" }}
-            color={useColorModeValue("#f3f3f3", "black")}
+            color={useColorModeValue(colors.lightBg, "black")}
           >
             <Flex flexDirection={"row"} alignItems="center">
               <TimeIcon w={30} h={30} />
@@ -129,8 +130,8 @@ export default function LibraryPage() {
         <Box
           border="2px"
           borderRadius="1rem"
-          borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
-          bg={useColorModeValue("#00ABC1", "#f3f3f3")}
+          borderColor={useColorModeValue(colors.primary, colors.lightBg)}
+          bg={useColorModeValue(colors.primary, colors.lightBg)}
           marginBottom={{ base: "1rem", lg: "0" }}
           marginTop="1rem"
           display={"flex"}
@@ -149,7 +150,7 @@ export default function LibraryPage() {
             alignContent={"center"}
             justifyContent={"center"}
             columnGap={"1rem"}
-            color={useColorModeValue("#f3f3f3", "black")}
+            color={useColorModeValue(colors.lightBg, "black")}
             fontFamily="Syne"
             w="auto"
             fontSize={{ base: "md", lg: "2xl" }}
@@ -202,7 +203,7 @@ export default function LibraryPage() {
         flexDirection={"column"}
         gap={{ base: "1rem", lg: "2rem" }}>
         <Button
-          color={useColorModeValue("#00ABC1", "#f3f3f3")}
+          color={useColorModeValue(colors.primary, colors.lightBg)}
           variant="ghost"
           fontWeight="bold"
           fontFamily="Syne"
@@ -220,27 +221,27 @@ export default function LibraryPage() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={1.5}
-                  stroke={useColorModeValue("#00ABC1", "#f3f3f3")}
+                  stroke={useColorModeValue(colors.primary, colors.lightBg)}
                 />
                 <path
                   d="M0.873535 1H8.91951V9"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={1.5}
-                  stroke={useColorModeValue("#00ABC1", "#f3f3f3")}
+                  stroke={useColorModeValue(colors.primary, colors.lightBg)}
                 />
               </svg>
             </Box>
           }
           onClick={(e) => {
-            window.open("https://library.uowm.gr/?page_id=854");
+            window.open("https://library.uowm.gr/?page_id=854", "_blank", "noopener,noreferrer");
           }}
           justifyContent="center"
         >
           {i18n.t("istoselidaVivliothikis")}
         </Button>
         <Button
-          color={useColorModeValue("#00ABC1", "#f3f3f3")}
+          color={useColorModeValue(colors.primary, colors.lightBg)}
           variant="ghost"
           fontWeight="bold"
           fontFamily="Syne"
@@ -258,20 +259,20 @@ export default function LibraryPage() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={1.5}
-                  stroke={useColorModeValue("#00ABC1", "#f3f3f3")}
+                  stroke={useColorModeValue(colors.primary, colors.lightBg)}
                 />
                 <path
                   d="M0.873535 1H8.91951V9"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={1.5}
-                  stroke={useColorModeValue("#00ABC1", "#f3f3f3")}
+                  stroke={useColorModeValue(colors.primary, colors.lightBg)}
                 />
               </svg>
             </Box>
           }
           onClick={(e) => {
-            window.open("https://uowm-opac.seab.gr/");
+            window.open("https://uowm-opac.seab.gr/", "_blank", "noopener,noreferrer");
           }}
           justifyContent="center"
         >

@@ -11,6 +11,7 @@ import i18n from "../i18n";
 import { menu } from "../assets/data/restaurantMenu";
 import { dayKeys, greekDays, englishDays } from "../utils/days";
 import { getPreviousWeekKey } from "../utils/date";
+import { colors } from "../theme/theme";
 
 export default function RestaurantUniversity() {
   const { t } = useTranslation();
@@ -47,8 +48,8 @@ export default function RestaurantUniversity() {
         <Box
           border="2px"
           borderRadius="1rem"
-          borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
-          bg={useColorModeValue("#00ABC1", "#f3f3f3")}
+          borderColor={useColorModeValue(colors.primary, colors.lightBg)}
+          bg={useColorModeValue(colors.primary, colors.lightBg)}
           px="1.5rem"
           py="1.5rem"
           width="100%"
@@ -57,7 +58,7 @@ export default function RestaurantUniversity() {
           <Flex
             flexDirection="column"
             alignItems="center"
-            color={useColorModeValue("#f3f3f3", "black")}
+            color={useColorModeValue(colors.lightBg, "black")}
             fontFamily="Syne"
           >
             <Box mt="1rem" w="100%">
@@ -90,8 +91,8 @@ export default function RestaurantUniversity() {
         <Box
           border="2px"
           borderRadius="1rem"
-          borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
-          bg={useColorModeValue("#00ABC1", "#f3f3f3")}
+          borderColor={useColorModeValue(colors.primary, colors.lightBg)}
+          bg={useColorModeValue(colors.primary, colors.lightBg)}
           px="1.5rem"
           py="1.5rem"
           width="100%"
@@ -100,7 +101,7 @@ export default function RestaurantUniversity() {
           <Flex
             flexDirection="column"
             alignItems="center"
-            color={useColorModeValue("#f3f3f3", "black")}
+            color={useColorModeValue(colors.lightBg, "black")}
             fontFamily="Syne"
           >
             <Flex alignItems="center">
@@ -127,8 +128,8 @@ export default function RestaurantUniversity() {
         <Box
           border="2px"
           borderRadius="1rem"
-          borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
-          bg={useColorModeValue("#00ABC1", "#f3f3f3")}
+          borderColor={useColorModeValue(colors.primary, colors.lightBg)}
+          bg={useColorModeValue(colors.primary, colors.lightBg)}
           px="1.5rem"
           py="1.5rem"
           width="100%"
@@ -137,7 +138,7 @@ export default function RestaurantUniversity() {
           <Flex
             flexDirection="column"
             alignItems="center"
-            color={useColorModeValue("#f3f3f3", "black")}
+            color={useColorModeValue(colors.lightBg, "black")}
             fontFamily="Syne"
           >
             <Flex alignItems="center">
@@ -158,8 +159,8 @@ export default function RestaurantUniversity() {
         <Box
           border="2px"
           borderRadius="1rem"
-          borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
-          bg={useColorModeValue("#00ABC1", "#f3f3f3")}
+          borderColor={useColorModeValue(colors.primary, colors.lightBg)}
+          bg={useColorModeValue(colors.primary, colors.lightBg)}
           px="1.5rem"
           py="1.5rem"
           width="100%"
@@ -168,7 +169,7 @@ export default function RestaurantUniversity() {
           <Flex
             flexDirection="column"
             alignItems="center"
-            color={useColorModeValue("#f3f3f3", "black")}
+            color={useColorModeValue(colors.lightBg, "black")}
             fontFamily="Syne"
           >
             <Flex alignItems="center">
@@ -189,8 +190,8 @@ export default function RestaurantUniversity() {
         <Box
           border="2px"
           borderRadius="1rem"
-          bg={useColorModeValue("#00ABC1", "#f3f3f3")}
-          borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
+          bg={useColorModeValue(colors.primary, colors.lightBg)}
+          borderColor={useColorModeValue(colors.primary, colors.lightBg)}
           px="1.5rem"
           py="1.5rem"
           width="100%"
@@ -204,7 +205,7 @@ export default function RestaurantUniversity() {
             fontFamily="Syne"
             w="100%"
             fontSize={{ base: "md", lg: "xl" }}
-            color={useColorModeValue("#f3f3f3", "black")}
+            color={useColorModeValue(colors.lightBg, "black")}
           >
             <Flex alignItems="center">
               <TimeIcon w={30} h={30} />

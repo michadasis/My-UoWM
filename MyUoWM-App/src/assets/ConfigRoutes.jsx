@@ -35,6 +35,7 @@
     -Fakidis
 
 */
+import { lazy } from "react";
 import {
   DepAnnounceIcon,
   CalendarTimeIcon,
@@ -50,14 +51,16 @@ import {
   StackedBooksIcon,
   StudentInPCIcon,
 } from "./icons";
-import ServicesPage from "../pages/ServicesPage";
-import LibraryPage from "../pages/LibraryPage";
-import FirstYearInfoPage from "../pages/FirstYearInfoPage";
-import MapPage from "../pages/MapPage";
-import StudentCare from "../pages/StudentCare";
-import RestaurantUniversity from "../pages/RestaurantUniversity";
 import i18n from "../i18n";
-import ClubsPage from "../pages/ClubsPage";
+
+const ServicesPage = lazy(() => import("../pages/ServicesPage"));
+const LibraryPage = lazy(() => import("../pages/LibraryPage"));
+const FirstYearInfoPage = lazy(() => import("../pages/FirstYearInfoPage"));
+const MapPage = lazy(() => import("../pages/MapPage"));
+const StudentCare = lazy(() => import("../pages/StudentCare"));
+const RestaurantUniversity = lazy(() => import("../pages/RestaurantUniversity"));
+const ClubsPage = lazy(() => import("../pages/ClubsPage"));
+
 export const Categories = [
   {
     title: i18n.t("announcements"),
@@ -68,7 +71,7 @@ export const Categories = [
     requireSelection: false,
     position: 1,
     hide: false,
-    pageToDisplay: null,
+    pageComponent: null,
   },
   {
     title: i18n.t("course_schedule"),
@@ -79,7 +82,7 @@ export const Categories = [
     requireSelection: false,
     position: 2,
     hide: false,
-    pageToDisplay: null,
+    pageComponent: null,
   },
   {
     title: i18n.t("StudentPortal"),
@@ -90,7 +93,7 @@ export const Categories = [
     requireSelection: false,
     position: 3,
     hide: false,
-    pageToDisplay: null,
+    pageComponent: null,
   },
   {
     title: "Open eClass",
@@ -101,7 +104,7 @@ export const Categories = [
     requireSelection: false,
     position: 4,
     hide: false,
-    pageToDisplay: null,
+    pageComponent: null,
   },
   {
     title: i18n.t("map"),
@@ -112,7 +115,7 @@ export const Categories = [
     requireSelection: false,
     position: 5,
     hide: false,
-    pageToDisplay: <MapPage />,
+    pageComponent: MapPage,
   },
   {
     title: i18n.t("foititiki_merimna"),
@@ -123,8 +126,8 @@ export const Categories = [
     requireSelection: false,
     position: 6,
     hide: false,
-    pageToDisplay: <StudentCare />,
-  }, 
+    pageComponent: StudentCare,
+  },
   {
     title: i18n.t("restaurant"),
     iconSVG: <MealIcon />,
@@ -134,9 +137,8 @@ export const Categories = [
     requireSelection: false,
     position: 7,
     hide: false,
-    pageToDisplay: <RestaurantUniversity />,
+    pageComponent: RestaurantUniversity,
   },
-   
   {
     title: i18n.t("library"),
     iconSVG: <LibraryIcon />,
@@ -146,7 +148,7 @@ export const Categories = [
     span: 1,
     isExternal: false,
     requireSelection: false,
-    pageToDisplay: <LibraryPage />,
+    pageComponent: LibraryPage,
   },
   {
     title: i18n.t("Services"),
@@ -157,7 +159,7 @@ export const Categories = [
     requireSelection: false,
     position: 9,
     hide: false,
-    pageToDisplay: <ServicesPage />,
+    pageComponent: ServicesPage,
   },
   {
     title: i18n.t("exams_schedule"),
@@ -168,7 +170,7 @@ export const Categories = [
     requireSelection: false,
     position: 10,
     hide: false,
-    pageToDisplay: null,
+    pageComponent: null,
   },
   {
     title: i18n.t("studentClubs"),
@@ -179,7 +181,7 @@ export const Categories = [
     requireSelection: false,
     position: 11,
     hide: false,
-    pageToDisplay: <ClubsPage />,
+    pageComponent: ClubsPage,
   },
   {
     title: i18n.t("freshmen_guides"),
@@ -190,7 +192,7 @@ export const Categories = [
     requireSelection: false,
     position: 12,
     hide: false,
-    pageToDisplay: <FirstYearInfoPage />,
+    pageComponent: FirstYearInfoPage,
   },
   {
     title: i18n.t("academic_personnel"),
@@ -201,7 +203,6 @@ export const Categories = [
     requireSelection: false,
     position: 13,
     hide: false,
-    pageToDisplay: null,
+    pageComponent: null,
   },
-  
 ];

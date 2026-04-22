@@ -45,6 +45,7 @@ import {
   Box,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { colors } from "../theme/theme";
 
 export default function FAQCard({ data }) {
   return (
@@ -59,7 +60,7 @@ export default function FAQCard({ data }) {
           color={useColorModeValue("black", "white")}
           border={"solid 2px"}
           borderRadius="1rem"
-          borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
+          borderColor={useColorModeValue(colors.primary, colors.lightBg)}
           bgColor="transparent"
         >
           <Box flex="1" textAlign="center">

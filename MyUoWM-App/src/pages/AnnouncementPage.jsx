@@ -60,7 +60,7 @@ export default function AnnouncementsPage() {
       });
     }
     if (announcementLink) {
-      window.open(announcementLink.link);
+      window.open(announcementLink.link, "_blank", "noopener,noreferrer");
       navigate("/");
     }
   }, [depCode]);
@@ -68,14 +68,14 @@ export default function AnnouncementsPage() {
     <Box>
       {announcementLink ? (
         <Heading textAlign="center" marginTop="50px">
-          Ανακατεύθυνση στο τμήμα
+          {i18n.t("graduation_redirection_message")}
           <a href={announcementLink.link} target="_blank" rel="noreferrer">
             {announcementLink.code}
           </a>
         </Heading>
       ) : (
         <Heading textAlign="center" marginTop="50px">
-          Παρακαλώ επιλέξτε τμήμα από τις ρυθμίσεις.
+          {i18n.t("error_description")}
         </Heading>
       )}
     </Box>

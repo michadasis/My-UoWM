@@ -1,25 +1,36 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import firstYearGuidesMdData from "../assets/data/FirstYearInfo";
 
-
 export const useGuidesMdData = () => {
     const { i18n } = useTranslation();
-    console.log("The language is: ", i18n.language);
     const [guideMd, setGuideMd] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
     const firstYearGuidesTranslated = firstYearGuidesMdData[i18n.language];
-    //markdown data for some reason are handled as fetchable links that explains
-    //the code below, to see for yourself, import an md file and console.log it
-    const fetchGuideByPath = (guidePath) => {
-        console.log(guidePath)
-        fetch(guidePath)
-            .then((res) => res.text())
+
+    // .md files are bundled as URL strings by Vite (assetsInclude), so we fetch their content
+    const fetchGuideByPath = useCallback((guidePath) => {
+        const controller = new AbortController();
+        setIsLoading(true);
+        setError(null);
+        fetch(guidePath, { signal: controller.signal })
+            .then((res) => {
+                if (!res.ok) throw new Error(`Failed to load guide: ${res.status}`);
+                return res.text();
+            })
             .then((md) => {
                 setGuideMd(md);
+                setIsLoading(false);
+            })
+            .catch((err) => {
+                if (err.name !== "AbortError") {
+                    setError(err.message);
+                    setIsLoading(false);
+                }
             });
-    };
+        return () => controller.abort();
+    }, []);
 
-    return { guideMd, firstYearGuidesTranslated, fetchGuideByPath, setGuideMd }
-
-
+    return { guideMd, firstYearGuidesTranslated, fetchGuideByPath, setGuideMd, isLoading, error }
 };

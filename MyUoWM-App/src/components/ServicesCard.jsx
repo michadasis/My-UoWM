@@ -37,6 +37,7 @@
 */
 
 import { Flex, Link, Image, Text, useColorModeValue } from "@chakra-ui/react";
+import { colors } from "../theme/theme";
 
 export default function ServicesCard({ srv }) {
   return (
@@ -64,7 +65,7 @@ export default function ServicesCard({ srv }) {
         borderRadius="20"
         border="2px"
         mb="1rem"
-        borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
+        borderColor={useColorModeValue(colors.primary, colors.lightBg)}
       >
         <Image
           src={srv.imgUrl}

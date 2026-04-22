@@ -36,20 +36,16 @@
 
 */
 
-import { AccordionItem, AccordionButton, AccordionIcon, AccordionPanel, Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+import { AccordionItem, AccordionButton, AccordionIcon, AccordionPanel, Box, Divider, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import ProjectMembersCard from "../components/ProjectMembersCard";
 
-export default function ProjectMembersList({ membersList, heading }) {
-  const SelectBorderColor = () => {
-    return useColorModeValue("primary", "light");
-  };
-
-  const SelectItemColor = () => {
-    return useColorModeValue("black", "white");
-  };
+export default function ProjectMembersList({ membersList, subsections, heading }) {
+  const borderColor = useColorModeValue("primary", "light");
+  const textColor = useColorModeValue("black", "white");
+  const subheadingColor = useColorModeValue("gray.500", "gray.400");
 
   return (
-    <Box borderRadius="20" w="100%" py="1rem" overflow="hidden" border="2px" borderColor={SelectBorderColor()}>
+    <Box borderRadius="20" w="100%" py="1rem" overflow="hidden" border="2px" borderColor={borderColor}>
       <AccordionItem border="none" w="100%">
         <Flex>
           <AccordionButton
@@ -63,7 +59,7 @@ export default function ProjectMembersList({ membersList, heading }) {
             outline="none"
             textAlign="left"
             bgColor="transparent"
-            color={SelectItemColor()}
+            color={textColor}
             border="none"
             overflow="hidden"
             gap={3}
@@ -75,9 +71,28 @@ export default function ProjectMembersList({ membersList, heading }) {
           </AccordionButton>
         </Flex>
         <AccordionPanel bgColor="transparent" pb={0}>
-          {membersList.map((data) => (
-            <ProjectMembersCard data={data} key={data.name}  />
-          ))}
+          {subsections
+            ? subsections.map(({ heading: subheading, members }, i) => (
+                <Box key={subheading}>
+                  {i > 0 && <Divider my={3} borderColor={borderColor} opacity={0.4} />}
+                  <Text
+                    textAlign="center"
+                    fontWeight="semibold"
+                    fontSize={{ sm: 12, md: 13, lg: 15 }}
+                    color={subheadingColor}
+                    mb={2}
+                    mt={i === 0 ? 1 : 0}
+                  >
+                    {subheading}
+                  </Text>
+                  {members.map((data) => (
+                    <ProjectMembersCard data={data} key={data.name} />
+                  ))}
+                </Box>
+              ))
+            : membersList.map((data) => (
+                <ProjectMembersCard data={data} key={data.name} />
+              ))}
         </AccordionPanel>
       </AccordionItem>
     </Box>

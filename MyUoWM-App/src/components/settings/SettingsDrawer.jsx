@@ -26,6 +26,7 @@ import i18n from "../../i18n";
 import LanguagePicker from "./LanguagePicker";
 import SettingsOption from "./SettingsOption";
 import ThemeToggle from "./ThemeToggle";
+import { colors } from "../../theme/theme";
 
 export function SettingsDrawer({ isOpen, onClose }) {
     const handleShare = (e) => {
@@ -38,8 +39,6 @@ export function SettingsDrawer({ isOpen, onClose }) {
             if (navigator.canShare(shareOpts)) {
                 navigator.share(shareOpts);
             }
-        } else {
-            console.log("cannot share")
         }
 
 
@@ -56,22 +55,22 @@ export function SettingsDrawer({ isOpen, onClose }) {
             <DrawerOverlay />
             <DrawerContent>
                 <DrawerHeader
-                    color={useColorModeValue("#00ABC1", "#f3f3f3")}
-                    backgroundColor={useColorModeValue("#f3f3f3", "black")}
+                    color={useColorModeValue(colors.primary, colors.lightBg)}
+                    backgroundColor={useColorModeValue(colors.lightBg, "black")}
                     borderBottomWidth="1px"
                     fontFamily="Syne"
                 >
                     {i18n.t("settings_title")}
                 </DrawerHeader>
                 <DrawerBody
-                    backgroundColor={useColorModeValue("#f3f3f3", "black")}
+                    backgroundColor={useColorModeValue(colors.lightBg, "black")}
                     fontFamily="Syne"
                 >
                     <Flex
                         direction="column"
                         fontFamily="Syne"
                         justifyItems={"center"}
-                        color={useColorModeValue("#00ABC1", "#f3f3f3")}
+                        color={useColorModeValue(colors.primary, colors.lightBg)}
                         borderRadius="0.5rem"
                         my={"2rem"}
                     >
@@ -82,14 +81,14 @@ export function SettingsDrawer({ isOpen, onClose }) {
                             display="flex"
                             alignItems="flex-start"
                             justifyContent={"space-between"}
-                            color={useColorModeValue("#00ABC1", "#f3f3f3")}
+                            color={useColorModeValue(colors.primary, colors.lightBg)}
                             my={"2rem"}
                         >
                             <ThemeToggle />
                         </FormControl>
 
                         <Box
-                            color={useColorModeValue("#00ABC1", "#f3f3f3")}
+                            color={useColorModeValue(colors.primary, colors.lightBg)}
                             alignItems="flex-start"
                             justifyContent={"space-between"}
                         >
@@ -136,8 +135,8 @@ export function SettingsDrawer({ isOpen, onClose }) {
                 </DrawerBody>
 
                 <DrawerFooter
-                    backgroundColor={useColorModeValue("#f3f3f3", "black")}
-                    color={useColorModeValue("#00ABC1", "#f3f3f3")}
+                    backgroundColor={useColorModeValue(colors.lightBg, "black")}
+                    color={useColorModeValue(colors.primary, colors.lightBg)}
                     justifyContent={"center"}
                 >
                     <Button

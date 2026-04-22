@@ -3,13 +3,14 @@ import { LeftArrowIcon } from "../../assets/icons";
 import { Flex, Divider, Heading, useColorModeValue } from "@chakra-ui/react";
 import i18n from "../../i18n";
 import { useScrollToTopOnLoad } from "../../hooks/useScrollToTopOnLoad";
+import { colors } from "../../theme/theme";
 
 const Guide = ({ guideContent, onClick }) => {
   useScrollToTopOnLoad();
   return (
     <Flex direction="column" paddingX={4} align="center">
       <Divider
-        borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
+        borderColor={useColorModeValue(colors.primary, colors.lightBg)}
         w={{ sm: "100%", md: "90%", lg: "80%", "2xl": "60%", "3xl": "50%" }}
         borderBottomWidth={2}
         opacity={1}
@@ -24,13 +25,13 @@ const Guide = ({ guideContent, onClick }) => {
       >
         <LeftArrowIcon
           width={16}
-          stroke={useColorModeValue("black", "#f3f3f3")}
+          stroke={useColorModeValue("black", colors.lightBg)}
         />
         <Heading
           paddingLeft={4}
           w="100%"
           fontSize={{ sm: 18, md: 22, lg: 26, xl: 32 }}
-          color={useColorModeValue("black", "#f3f3f3")}
+          color={useColorModeValue("black", colors.lightBg)}
           fontWeight="mormal"
           fontFamily="Syne"
           userSelect="none"
@@ -39,7 +40,7 @@ const Guide = ({ guideContent, onClick }) => {
         </Heading>
       </Flex>
       <Divider
-        borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
+        borderColor={useColorModeValue(colors.primary, colors.lightBg)}
         w={{ sm: "100%", md: "90%", lg: "80%", "2xl": "60%", "3xl": "50%" }}
         borderBottomWidth={2}
         opacity={1}
