@@ -4,6 +4,7 @@ metadata:
   name: my-cs-deployment
   namespace: my-cs
 spec:
+  revisionHistoryLimit: 0
   replicas: 4
   selector:
     matchLabels:
@@ -17,6 +18,6 @@ spec:
     spec:
       containers:
         - name: my-cs-frontend
-          image: ieeesbkastoria/mycs-uowm:latest
+          image: netsim.cs.uowm.gr/ieee-lab/my.cs.uowm:latest
           ports:
             - containerPort: 80

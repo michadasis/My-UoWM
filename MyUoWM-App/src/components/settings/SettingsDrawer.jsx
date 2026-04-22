@@ -109,23 +109,23 @@ export function SettingsDrawer({ isOpen, onClose }) {
                                 <SettingsOption Icon={FaFileAlt} onClick={onClose} text={i18n.t("license")} />
                             </a>
                             <a
-                                href="https://drive.google./drive/folders/1LToRmuLuJDSXsTl99GL80mmP4ifcjw6V?usp=sharing"
+                                href={i18n.t("app_manual_link")}
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 <SettingsOption Icon={FaBook} onClick={onClose} text={i18n.t("app_manual")} />
 
                             </a>
-                            <SettingsOption Icon={FaShareAlt} onClick={handleShare} text={i18n.t("share_app")} />
+                            {/* <SettingsOption Icon={FaShareAlt} onClick={handleShare} text={i18n.t("share_app")} /> */}
                             <a
-                                href="https://github.com/ieeesbkastoria/My-UoWM"
+                                href="https://netsim.cs.uowm.gr/gitlab/ieee-lab/my.cs.uowm"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 <SettingsOption Icon={FaGitlab} onClick={onClose} text={i18n.t("gitlab_contribute")} />
                             </a>
                             <a
-                                href="https://docs.google.com/forms/d/1EYLswtiR87ZY1yumXJ04C5genP4QnikzGwsnZMhKGKQ/edit"
+                                href="https://forms.gle/FhbS51RGeBb1xzKi7"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >

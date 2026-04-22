@@ -4,6 +4,6 @@ services:
     frontend:
         container_name: frontend
         build: .
-        image: ieeesbkastoria/mycs-uowm:latest
+        image: netsim.cs.uowm.gr/ieee-lab/my.cs.uowm:latest
         ports:
             - "80:80"
