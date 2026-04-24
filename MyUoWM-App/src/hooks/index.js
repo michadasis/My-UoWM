@@ -10,6 +10,7 @@ import { useAnnouncementLink } from './useAnnouncementLink';
 import { useScheduleData } from './useScheduleData';
 import { useDepartments } from './useDepartments';
 import { useClubs } from './useClubs';
+import { usePersonnelLink } from './usePersonnelLink';
 export {
     useGuidesMdData,
     useScrollToTopOnLoad,
@@ -23,4 +24,5 @@ export {
     useScheduleData,
     useDepartments,
     useClubs,
+    usePersonnelLink,
 }

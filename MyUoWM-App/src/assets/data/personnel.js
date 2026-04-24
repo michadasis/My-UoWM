@@ -1,7 +1,7 @@
 /*
   MIT License
 
-  Copyright (c) 2024 Open Source  UOM
+  Copyright (c) 2024 Open Source UOM
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -24,114 +24,80 @@
   Made by Open Source UoM (https://opensource.uom.gr)
 
 */
-import i18n from "../../i18n";
 
-export const DEPARTMENT_CODES = {
-  // School of Engineering (Kozani)
-  ELECTRICAL_COMPUTER: "ece",
-  MECHANICAL: "mech",
-  CHEMICAL: "chemeng",
-  MINERAL_RESOURCES: "mre",
-  PRODUCT_SYSTEMS_DESIGN: "ide",
-  // School of Economic Sciences (Kozani/Grevena)
-  ECONOMICS: "eco",
-  ACCOUNTING_FINANCE: "af",
-  BUSINESS_ADMINISTRATION: "ba",
-  // School of Fine Arts (Florina)
-  FINE_APPLIED_ARTS: "eetf",
-  // School of Agriculture Forestry (Florina)
-  AGRICULTURE_FORESTRY: "agr",
-  // School of Social Sciences and Humanities (Florina/Kastoria)
-  PRIMARY_EDUCATION: "eled",
-  EARLY_CHILDHOOD: "nured",
-  COMMUNICATION_DIGITAL: "cdm",
-  PSYCHOLOGY: "psy",
-  // School of Sciences (Kastoria)
-  MATHEMATICS: "math",
-  INFORMATICS: "cs",
-  // School of Health Sciences (Ptolemaida)
-  OCCUPATIONAL_THERAPY: "ot",
-  MIDWIFERY: "mw",
-};
+import { DEPARTMENT_CODES } from "./DepNames";
 
-export const DEPARTMENTS = [
-  // School of Engineering
+export const PersonnelData = [
   {
     code: DEPARTMENT_CODES.ELECTRICAL_COMPUTER,
-    name: i18n.t("ece_department"),
+    link: "https://ece.uowm.gr/%ce%bc%ce%b5%ce%bb%ce%b7-%ce%b4%ce%b5%cf%80/",
   },
   {
     code: DEPARTMENT_CODES.MECHANICAL,
-    name: i18n.t("mech_department"),
+    link: "https://mech.uowm.gr/dep/",
   },
   {
     code: DEPARTMENT_CODES.CHEMICAL,
-    name: i18n.t("chemeng_department"),
+    link: "https://chemeng.uowm.gr/meli-dep/",
   },
   {
     code: DEPARTMENT_CODES.MINERAL_RESOURCES,
-    name: i18n.t("mre_department"),
+    link: "https://mre.uowm.gr/prosopiko/",
   },
   {
     code: DEPARTMENT_CODES.PRODUCT_SYSTEMS_DESIGN,
-    name: i18n.t("ide_department"),
+    link: "https://ide.uowm.gr/prosopiko/",
   },
-  // School of Economic Sciences
   {
     code: DEPARTMENT_CODES.ECONOMICS,
-    name: i18n.t("eco_department"),
+    link: "https://econ.uowm.gr/anthopino-dynamiko/",
   },
   {
     code: DEPARTMENT_CODES.ACCOUNTING_FINANCE,
-    name: i18n.t("af_department"),
+    link: "https://stat.uowm.gr/dep/",
   },
   {
     code: DEPARTMENT_CODES.BUSINESS_ADMINISTRATION,
-    name: i18n.t("ba_department"),
+    link: "https://ba.uowm.gr/%cf%80%cf%81%ce%bf%cf%83%cf%89%cf%80%ce%b9%ce%ba%cf%8c/didaktiko-prosopiko/d-e-p/",
   },
-  // School of Fine Arts
   {
     code: DEPARTMENT_CODES.FINE_APPLIED_ARTS,
-    name: i18n.t("eetf_department"),
+    link: "https://eetf.uowm.gr/prosopiko/didaktiko-erevnitiko-prosopiko-d-e-p/",
   },
-  // School of Agriculture
   {
     code: DEPARTMENT_CODES.AGRICULTURE_FORESTRY,
-    name: i18n.t("agr_department"),
+    link: "https://agro.uowm.gr/%ce%b4%ce%b9%ce%b4%ce%b1%ce%ba%cf%84%ce%b9%ce%ba%cf%8c-%ce%b5%cf%81%ce%b5%cf%85%ce%bd%ce%b7%cf%84%ce%b9%ce%ba%cf%8c-%cf%80%cf%81%ce%bf%cf%83%cf%89%cf%80%ce%b9%ce%ba%cf%8c/#",
   },
-  // School of Social Sciences
   {
     code: DEPARTMENT_CODES.PRIMARY_EDUCATION,
-    name: i18n.t("eled_department"),
+    link: "https://eled.uowm.gr/prosopiko/",
   },
   {
     code: DEPARTMENT_CODES.EARLY_CHILDHOOD,
-    name: i18n.t("nured_department"),
+    link: "https://nured.uowm.gr/%ce%b4%ce%b9%ce%b4%ce%b1%ce%ba%cf%84%ce%b9%ce%ba%cf%8c-%ce%b5%cf%81%ce%b5%cf%85%ce%bd%ce%b7%cf%84%ce%b9%ce%ba%cf%8c-%cf%80%cf%81%ce%bf%cf%83%cf%89%cf%80%ce%b9%ce%ba%cf%8c-%ce%b4-%ce%b5-%cf%80/",
   },
   {
     code: DEPARTMENT_CODES.COMMUNICATION_DIGITAL,
-    name: i18n.t("cdm_department"),
+    link: "https://cdm.uowm.gr/meli-dep/",
   },
   {
     code: DEPARTMENT_CODES.PSYCHOLOGY,
-    name: i18n.t("psy_department"),
+    link: "https://psy.uowm.gr/prosopiko/",
   },
-  // School of Sciences
   {
     code: DEPARTMENT_CODES.MATHEMATICS,
-    name: i18n.t("math_department"),
+    link: "https://math.uowm.gr/meli-dep-2/",
   },
   {
     code: DEPARTMENT_CODES.INFORMATICS,
-    name: i18n.t("cs_department"),
+    link: "https://cs.uowm.gr/archiki-selida/prosopiko/",
   },
-  // School of Health Sciences
   {
     code: DEPARTMENT_CODES.OCCUPATIONAL_THERAPY,
-    name: i18n.t("ot_department"),
+    link: "https://ot.uowm.gr/meli-dep/",
   },
   {
     code: DEPARTMENT_CODES.MIDWIFERY,
-    name: i18n.t("mw_department"),
+    link: "https://mw.uowm.gr/meli-dep/",
   },
 ];

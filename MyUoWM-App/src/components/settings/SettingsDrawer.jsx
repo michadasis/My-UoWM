@@ -26,6 +26,7 @@ import i18n from "../../i18n";
 import LanguagePicker from "./LanguagePicker";
 import SettingsOption from "./SettingsOption";
 import ThemeToggle from "./ThemeToggle";
+import DepartmentPicker from "./DepartmentPicker";
 import { colors } from "../../theme/theme";
 
 export function SettingsDrawer({ isOpen, onClose }) {
@@ -75,6 +76,16 @@ export function SettingsDrawer({ isOpen, onClose }) {
                         my={"2rem"}
                     >
                         <LanguagePicker />
+                    </Flex>
+                    <Flex
+                        direction="column"
+                        fontFamily="Syne"
+                        justifyItems={"center"}
+                        color={useColorModeValue(colors.primary, colors.lightBg)}
+                        borderRadius="0.5rem"
+                        my={"2rem"}
+                    >
+                        <DepartmentPicker onClose={onClose} />
                     </Flex>
                     <Box>
                         <FormControl

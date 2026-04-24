@@ -1,50 +1,117 @@
 /*
   MIT License
-
-  Copyright (c) 2024 Open Source  UOM
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to deal
-  in the Software without restriction, including without limitation the rights
-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-  copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in all
-  copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-  SOFTWARE.
-
-  Made by Open Source UoM (https://opensource.uom.gr)
-
-  Project members:
-    -Apostolidis
-    -Davios
-    -Iosifidis
-    -Konstantinidis
-    -Mpakalis
-    -Nasis
-    -Omiliades
-    -Patsouras
-    -Fakidis
-
+  Copyright (c) 2024 Open Source UOM
 */
 
 import { DEPARTMENT_CODES } from "./DepNames";
 
 export const schedulesData = new Map([
   [
-    // Τμήμα Πληροφορικής
     DEPARTMENT_CODES.INFORMATICS,
     {
-      semester:
-        "https://cs.uowm.gr/archiki-selida/orologio-programma-mathimaton",
+      semester: "https://cs.uowm.gr/archiki-selida/orologio-programma-mathimaton",
     },
-  ]
+  ],
+  [
+    DEPARTMENT_CODES.ELECTRICAL_COMPUTER,
+    {
+      semester: "https://ece.uowm.gr/",
+    },
+  ],
+  [
+    DEPARTMENT_CODES.MECHANICAL,
+    {
+      semester: "https://mech.uowm.gr/",
+    },
+  ],
+  [
+    DEPARTMENT_CODES.CHEMICAL,
+    {
+      semester: "https://chemeng.uowm.gr/",
+    },
+  ],
+  [
+    DEPARTMENT_CODES.MINERAL_RESOURCES,
+    {
+      semester: "https://mre.uowm.gr/",
+    },
+  ],
+  [
+    DEPARTMENT_CODES.PRODUCT_SYSTEMS_DESIGN,
+    {
+      semester: "https://ide.uowm.gr/",
+    },
+  ],
+  [
+    DEPARTMENT_CODES.ECONOMICS,
+    {
+      semester: "https://econ.uowm.gr/",
+    },
+  ],
+  [
+    DEPARTMENT_CODES.ACCOUNTING_FINANCE,
+    {
+      semester: "https://stat.uowm.gr/",
+    },
+  ],
+  [
+    DEPARTMENT_CODES.BUSINESS_ADMINISTRATION,
+    {
+      semester: "https://ba.uowm.gr/",
+    },
+  ],
+  [
+    DEPARTMENT_CODES.FINE_APPLIED_ARTS,
+    {
+      semester: "https://eetf.uowm.gr/",
+    },
+  ],
+  [
+    DEPARTMENT_CODES.AGRICULTURE_FORESTRY,
+    {
+      semester: "https://agro.uowm.gr/",
+    },
+  ],
+  [
+    DEPARTMENT_CODES.PRIMARY_EDUCATION,
+    {
+      semester: "https://eled.uowm.gr/",
+    },
+  ],
+  [
+    DEPARTMENT_CODES.EARLY_CHILDHOOD,
+    {
+      semester: "https://nured.uowm.gr/",
+    },
+  ],
+  [
+    DEPARTMENT_CODES.COMMUNICATION_DIGITAL,
+    {
+      semester: "https://cdm.uowm.gr/",
+    },
+  ],
+  [
+    DEPARTMENT_CODES.PSYCHOLOGY,
+    {
+      semester: "https://psy.uowm.gr/",
+    },
+  ],
+  [
+    DEPARTMENT_CODES.MATHEMATICS,
+    {
+      semester: "https://math.uowm.gr/",
+    },
+  ],
+  [
+    DEPARTMENT_CODES.OCCUPATIONAL_THERAPY,
+    {
+      semester: "https://ot.uowm.gr/",
+    },
+  ],
+  [
+    DEPARTMENT_CODES.MIDWIFERY,
+    {
+      semester: "https://mw.uowm.gr/",
+    },
+  ],
 ]);

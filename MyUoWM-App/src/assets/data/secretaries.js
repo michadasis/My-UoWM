@@ -1,90 +1,124 @@
 /*
   MIT License
-
-  Copyright (c) 2024 Open Source  UOM
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to deal
-  in the Software without restriction, including without limitation the rights
-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-  copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in all
-  copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-  SOFTWARE.
-
-  Made by Open Source UoM (https://opensource.uom.gr)
-
-  Project members:
-    -Apostolidis
-    -Davios
-    -Iosifidis
-    -Konstantinidis
-    -Mpakalis
-    -Nasis
-    -Omiliades
-    -Patsouras
-    -Fakidis
-
+  Copyright (c) 2024 Open Source UOM
 */
 import i18n from "../../i18n";
 
 const secrData = [
+  // School of Engineering – Kozani
+  {
+    name: i18n.t("ece_department"),
+    email: "secr@ece.uowm.gr",
+    tel: "+30 24610 56200",
+    link: "https://ece.uowm.gr/",
+  },
+  {
+    name: i18n.t("mech_department"),
+    email: "secr@mech.uowm.gr",
+    tel: "+30 24610 56604",
+    link: "https://mech.uowm.gr/",
+  },
+  {
+    name: i18n.t("chemeng_department"),
+    email: "secr@chemeng.uowm.gr",
+    tel: "+30 24610 56654",
+    link: "https://chemeng.uowm.gr/",
+  },
+  {
+    name: i18n.t("mre_department"),
+    email: "secr@mre.uowm.gr",
+    tel: "+30 24610 68255",
+    link: "https://mre.uowm.gr/",
+  },
+  {
+    name: i18n.t("ide_department"),
+    email: "secr@ide.uowm.gr",
+    tel: "+30 22510 36604",
+    link: "https://ide.uowm.gr/",
+  },
+  // School of Economic Sciences
   {
     name: i18n.t("eco_department"),
-    email: "ecosecr@uom.edu.gr",
-    tel: "2310 891.119, 149, 211, 265, 656",
-    link: "https://www.uom.gr/eco/grammateia",
+    email: "econ@uowm.gr",
+    tel: "+30 24610 56200",
+    link: "https://econ.uowm.gr/",
   },
   {
-    name: i18n.t("bso_department"),
-    email: "bsosecr@uom.gr",
-    tel: "2310891375, 2310891645, 2310891433",
-    link: "https://www.uom.gr/bso/grammateia",
-  },
-  {
-    name: i18n.t("dai_department"),
-    email: "daisecr@uom.edu.gr",
-    tel: "2310.891 158",
-    link: "https://www.uom.gr/dai/grammateia",
+    name: i18n.t("af_department"),
+    email: "secr@stat.uowm.gr",
+    tel: "+30 24610 56200",
+    link: "https://stat.uowm.gr/",
   },
   {
     name: i18n.t("ba_department"),
-    email: "basecr@uom.edu.gr",
-    tel: "2310 891.283, 2310 891.213, 2310 891.646, 2310 891.214",
-    link: "https://www.uom.gr/ba/grammateia",
+    email: "secr@ba.uowm.gr",
+    tel: "+30 24610 56200",
+    link: "https://ba.uowm.gr/",
+  },
+  // School of Fine Arts – Florina
+  {
+    name: i18n.t("eetf_department"),
+    email: "secr@eetf.uowm.gr",
+    tel: "+30 23850 55250",
+    link: "https://eetf.uowm.gr/",
+  },
+  // School of Agriculture – Florina
+  {
+    name: i18n.t("agr_department"),
+    email: "secr@agr.uowm.gr",
+    tel: "+30 23850 55000",
+    link: "https://agro.uowm.gr/",
+  },
+  // School of Social Sciences
+  {
+    name: i18n.t("eled_department"),
+    email: "secr@eled.uowm.gr",
+    tel: "+30 23850 55000",
+    link: "https://eled.uowm.gr/",
   },
   {
-    name: i18n.t("fin_department"),
-    email: "finsecr@uom.edu.gr",
-    tel: "2310891607, 2310891441",
-    link: "https://www.uom.gr/fin/grammateia",
+    name: i18n.t("nured_department"),
+    email: "secr@nured.uowm.gr",
+    tel: "+30 23850 55101",
+    link: "https://nured.uowm.gr/",
   },
   {
-    name: i18n.t("ies_department"),
-    email: "essecr@uom.edu.gr",
-    tel: "2310 891.285",
-    link: "https://www.uom.gr/ies/grammateia",
+    name: i18n.t("cdm_department"),
+    email: "secr@cdm.uowm.gr",
+    tel: "+30 24670 87061",
+    link: "https://cdm.uowm.gr/",
   },
   {
-    name: i18n.t("esp_department"),
-    email: "espsecr@uom.edu.gr",
-    tel: "2310.891258, 2310891339, 2310 891339, 2310 891253",
-    link: "https://www.uom.gr/esp/epikoinonia",
+    name: i18n.t("psy_department"),
+    email: "secr@psy.uowm.gr",
+    tel: "+30 23850 55200",
+    link: "https://psy.uowm.gr/",
+  },
+  // School of Sciences – Kastoria
+  {
+    name: i18n.t("math_department"),
+    email: "secr@math.uowm.gr",
+    tel: "+30 24670 87261",
+    link: "https://math.uowm.gr/",
   },
   {
-    name: i18n.t("msa_department"),
-    email: "msasecr@uom.edu.gr",
-    tel: "2310 891.281, 2310 891.902",
-    link: " https://www.uom.gr/msa/grammateia-tmhmatos",
+    name: i18n.t("cs_department"),
+    email: "secr@cs.uowm.gr",
+    tel: "+30 24670 87062",
+    link: "https://cs.uowm.gr/",
+  },
+  // School of Health Sciences – Ptolemaida
+  {
+    name: i18n.t("ot_department"),
+    email: "secr@ot.uowm.gr",
+    tel: "+30 24610 68055",
+    link: "https://ot.uowm.gr/",
+  },
+  {
+    name: i18n.t("mw_department"),
+    email: "secr@mw.uowm.gr",
+    tel: "+30 24610 68050",
+    link: "https://mw.uowm.gr/",
   },
 ];
 

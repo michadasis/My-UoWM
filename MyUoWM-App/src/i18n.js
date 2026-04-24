@@ -12,6 +12,7 @@ import enSettingsPage from "./assets/locales/en/settings_page.js";
 import enAboutPage from "./assets/locales/en/about_page.js";
 import enError404 from "./assets/locales/en/error404.js"
 import enUoWMMembers from "./assets/locales/en/uowm_members.js";
+import enDepNames from "./assets/locales/en/depNames.js";
 
 import elRestaurant from "./assets/locales/el/restaurant.js";
 import elFreshmen from "./assets/locales/el/freshmen.js";
@@ -26,6 +27,7 @@ import elAboutPage from "./assets/locales/el/about_page.js";
 import elError404 from "./assets/locales/el/error404.js"
 import studentCare from "./assets/locales/el/studentCare.js";
 import elUoWMMembers from "./assets/locales/el/uowm_members.js";
+import elDepNames from "./assets/locales/el/depNames.js";
 
 const resources = {
   en: {
@@ -43,6 +45,7 @@ const resources = {
       ...enError404,
       ...studentCare,
       ...enUoWMMembers,
+      ...enDepNames,
       //categories.js
       search_no_results: "No results found.",
       redirecting: "Redirecting...",
@@ -131,6 +134,7 @@ const resources = {
       ...elError404,
       ...studentCare,
       ...elUoWMMembers,
+      ...elDepNames,
 
       //categories.js
       search_no_results: "Η αναζήτηση δεν επέστρεψε αποτελέσματα.",

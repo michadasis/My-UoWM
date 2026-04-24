@@ -60,29 +60,32 @@ const MapPage = lazy(() => import("../pages/MapPage"));
 const StudentCare = lazy(() => import("../pages/StudentCare"));
 const RestaurantUniversity = lazy(() => import("../pages/RestaurantUniversity"));
 const ClubsPage = lazy(() => import("../pages/ClubsPage"));
+const AnnouncementPage = lazy(() => import("../pages/AnnouncementPage"));
+const SchedulePage = lazy(() => import("../pages/SchedulePage"));
+const AcademicPersonnelPage = lazy(() => import("../pages/AcademicPersonnelPage"));
 
 export const Categories = [
   {
     title: i18n.t("announcements"),
     iconSVG: <DepAnnounceIcon />,
-    route: "https://cs.uowm.gr/category/announcements/",
+    route: "/announcements",
     span: 2,
     isExternal: true,
-    requireSelection: false,
+    requireSelection: true,
     position: 1,
     hide: false,
-    pageComponent: null,
+    pageComponent: AnnouncementPage,
   },
   {
     title: i18n.t("course_schedule"),
     iconSVG: <CalendarTimeIcon />,
-    route: "https://cs.uowm.gr/archiki-selida/orologio-programma-mathimaton",
+    route: "/semesterschedule",
     span: 1,
     isExternal: true,
-    requireSelection: false,
+    requireSelection: true,
     position: 2,
     hide: false,
-    pageComponent: null,
+    pageComponent: () => <SchedulePage semesterProp={true} />,
   },
   {
     title: i18n.t("StudentPortal"),
@@ -164,13 +167,13 @@ export const Categories = [
   {
     title: i18n.t("exams_schedule"),
     iconSVG: <ExamsTestIcon />,
-    route: "https://cs.uowm.gr/archiki-selida/programma-spoudwn/programma-exetaseon/",
+    route: "/examschedule",
     isExternal: true,
     span: 1,
-    requireSelection: false,
+    requireSelection: true,
     position: 10,
     hide: false,
-    pageComponent: null,
+    pageComponent: () => <SchedulePage examsProp={true} />,
   },
   {
     title: i18n.t("studentClubs"),
@@ -197,12 +200,12 @@ export const Categories = [
   {
     title: i18n.t("academic_personnel"),
     iconSVG: <PeopleIcon />,
-    route: "https://cs.uowm.gr/archiki-selida/prosopiko/",
+    route: "/academic_personnel",
     span: 1,
     isExternal: true,
-    requireSelection: false,
+    requireSelection: true,
     position: 13,
     hide: false,
-    pageComponent: null,
+    pageComponent: AcademicPersonnelPage,
   },
 ];
