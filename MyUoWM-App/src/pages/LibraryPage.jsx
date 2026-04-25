@@ -39,10 +39,33 @@ import React from 'react';
 import { Flex, Box, Text, Button, useColorModeValue } from "@chakra-ui/react";
 import i18n from "../i18n";
 import { TimeIcon, PhoneIcon } from "@chakra-ui/icons";
-import { LIBRARY_OPENING_HOURS, LIBRARY_PHONE_LIST } from "../assets/data/Library";
 import { colors } from "../theme/theme";
+import { useDepName } from "../hooks";
+import { DEP_CAMPUS_MAP, CAMPUS_MAPS, CAMPUSES } from "../assets/data/MapData";
+import { LIBRARIES } from "../assets/data/Library";
 
 export default function LibraryPage() {
+  const { depCode } = useDepName();
+  const isGreek = i18n.language === "el";
+
+  const campus = depCode
+    ? DEP_CAMPUS_MAP[depCode] ?? CAMPUSES.KASTORIA
+    : CAMPUSES.KASTORIA;
+
+  const lib = LIBRARIES[campus];
+  const campusData = CAMPUS_MAPS[campus];
+  const campusLabel = isGreek ? campusData.label_el : campusData.label_en;
+
+  const { on_weekdays, on_saturday, on_sunday } = lib.opening_hours;
+
+  // Combine Sat+Sun into one row if both closed
+  const satSunBothClosed = !on_saturday.start && !on_sunday.start;
+
+  const borderColor = useColorModeValue(colors.primary, colors.lightBg);
+  const boxBg       = useColorModeValue(colors.primary, colors.lightBg);
+  const boxColor    = useColorModeValue(colors.lightBg, "black");
+  const btnColor    = useColorModeValue(colors.primary, colors.lightBg);
+
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -53,7 +76,18 @@ export default function LibraryPage() {
       flexDirection="column"
       alignItems="center"
     >
-      {/* Wrapper container */}
+      {/* Campus label */}
+      <Text
+        fontFamily="Syne"
+        fontWeight="bold"
+        fontSize={{ base: "md", lg: "xl" }}
+        color={borderColor}
+        mt="1rem"
+        mb="0"
+      >
+        {campusLabel}
+      </Text>
+
       <Flex
         textAlign="center"
         flexDirection={{ base: "column", lg: "row" }}
@@ -63,14 +97,14 @@ export default function LibraryPage() {
         width={{ sm: "100%", lg: "fit-content" }}
         height="100%"
         paddingX="16px"
-        margin={{sm: "1rem", lg: "5rem 0 10rem 0"}}
+        margin={{ sm: "1rem", lg: "5rem 0 10rem 0" }}
       >
-        {/* Ωράριο */}
+        {/* ── Ωράριο ── */}
         <Box
           border="2px"
           borderRadius="1rem"
-          bg={useColorModeValue(colors.primary, colors.lightBg)}
-          borderColor={useColorModeValue(colors.primary, colors.lightBg)}
+          bg={boxBg}
+          borderColor={borderColor}
           marginBottom={{ base: "1rem", lg: "0" }}
           marginTop="1rem"
           px="1.5rem"
@@ -88,7 +122,7 @@ export default function LibraryPage() {
             fontFamily="Syne"
             w="100%"
             fontSize={{ base: "md", lg: "xl" }}
-            color={useColorModeValue(colors.lightBg, "black")}
+            color={boxColor}
           >
             <Flex flexDirection={"row"} alignItems="center">
               <TimeIcon w={30} h={30} />
@@ -101,26 +135,43 @@ export default function LibraryPage() {
                 {i18n.t("orario")}
               </Text>
             </Flex>
+
+            {/* Mon–Fri */}
             <Flex mt="1rem" flexDirection={"row"} alignItems="center">
               <Box mx="0.5rem">
-                <Text as="" fontWeight={"bold"}>
-                  {i18n.t("defPar")}
-                </Text>{" "}
+                <Text as="" fontWeight={"bold"}>{i18n.t("defPar")}</Text>
               </Box>
               <Box mx="0.5rem">
-                {LIBRARY_OPENING_HOURS.on_weekdays.start}-
-                {LIBRARY_OPENING_HOURS.on_weekdays.end}
+                {on_weekdays.start} – {on_weekdays.end}
               </Box>
             </Flex>
+
+            {/* Saturday */}
+            {!satSunBothClosed && (
+              <Flex mt="1rem" flexDirection={"row"} alignItems="center">
+                <Box mx="1rem">
+                  <Text as="" fontWeight={"bold"}>{i18n.t("savvato")}:</Text>
+                </Box>
+                <Box mx="0.5rem">
+                  {on_saturday.start
+                    ? `${on_saturday.start} – ${on_saturday.end}`
+                    : i18n.t("kleista")}
+                </Box>
+              </Flex>
+            )}
+
+            {/* Sunday — or combined Sat-Sun when both closed */}
             <Flex mt="1rem" flexDirection={"row"} alignItems="center">
               <Box mx="1rem">
                 <Text as="" fontWeight={"bold"}>
-                  {i18n.t("on_weekend")}
-                </Text>{" "}
+                  {satSunBothClosed
+                    ? `${i18n.t("savvato")} - ${i18n.t("kyriaki")}:`
+                    : `${i18n.t("kyriaki")}:`}
+                </Text>
               </Box>
               <Box mx="0.5rem">
-                {LIBRARY_OPENING_HOURS.on_weekend.start
-                  ? `${LIBRARY_OPENING_HOURS.on_on_weekend.start}-${LIBRARY_OPENING_HOURS.on_on_weekend.end}`
+                {on_sunday.start
+                  ? `${on_sunday.start} – ${on_sunday.end}`
                   : i18n.t("kleista")}
               </Box>
             </Flex>
@@ -130,8 +181,8 @@ export default function LibraryPage() {
         <Box
           border="2px"
           borderRadius="1rem"
-          borderColor={useColorModeValue(colors.primary, colors.lightBg)}
-          bg={useColorModeValue(colors.primary, colors.lightBg)}
+          borderColor={borderColor}
+          bg={boxBg}
           marginBottom={{ base: "1rem", lg: "0" }}
           marginTop="1rem"
           display={"flex"}
@@ -150,7 +201,7 @@ export default function LibraryPage() {
             alignContent={"center"}
             justifyContent={"center"}
             columnGap={"1rem"}
-            color={useColorModeValue(colors.lightBg, "black")}
+            color={boxColor}
             fontFamily="Syne"
             w="auto"
             fontSize={{ base: "md", lg: "2xl" }}
@@ -174,26 +225,16 @@ export default function LibraryPage() {
               w="100%"
               fontSize={{ base: "md", lg: "xl" }}
             >
-              <Text>
-                {LIBRARY_PHONE_LIST[0]}
-              </Text>
-              <Text>
-                {LIBRARY_PHONE_LIST[1]}
-              </Text>
-            </Flex>
-            <Flex
-              flexDirection={"column"}
-              alignItems="center"
-              justifyContent="center"
-              w="100%"
-              fontSize={{ base: "md", lg: "xl" }}
-            >
-              <Text>
-                {LIBRARY_PHONE_LIST[2]}
-              </Text>
-              <Text>
-                {LIBRARY_PHONE_LIST[3]}
-              </Text>
+              {lib.staff.map((person, idx) => (
+                <Flex key={idx} flexDirection="column" alignItems="center" mb="0.5rem">
+                  <Text>
+                    {isGreek
+                      ? `${person.name_el}, ${person.role_el}`
+                      : `${person.name_en}, ${person.role_en}`}
+                  </Text>
+                  <Text>{`email: ${person.email}`}</Text>
+                </Flex>
+              ))}
             </Flex>
           </Flex>
         </Box>
@@ -201,79 +242,42 @@ export default function LibraryPage() {
       <Flex
         display={"flex"}
         flexDirection={"column"}
-        gap={{ base: "1rem", lg: "2rem" }}>
+        gap={{ base: "1rem", lg: "2rem" }}
+      >
         <Button
-          color={useColorModeValue(colors.primary, colors.lightBg)}
+          color={btnColor}
           variant="ghost"
           fontWeight="bold"
           fontFamily="Syne"
           fontSize={{ base: "lg", lg: "2xl" }}
           rightIcon={
             <Box ml="0.5rem">
-              <svg
-                width="15px"
-                viewBox="0 0 10 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.873535 9L8.91951 1"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  stroke={useColorModeValue(colors.primary, colors.lightBg)}
-                />
-                <path
-                  d="M0.873535 1H8.91951V9"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  stroke={useColorModeValue(colors.primary, colors.lightBg)}
-                />
+              <svg width="15px" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.873535 9L8.91951 1" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} stroke={btnColor} />
+                <path d="M0.873535 1H8.91951V9" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} stroke={btnColor} />
               </svg>
             </Box>
           }
-          onClick={(e) => {
-            window.open("https://library.uowm.gr/?page_id=854", "_blank", "noopener,noreferrer");
-          }}
+          onClick={() => window.open(lib.websiteUrl, "_blank", "noopener,noreferrer")}
           justifyContent="center"
         >
           {i18n.t("istoselidaVivliothikis")}
         </Button>
         <Button
-          color={useColorModeValue(colors.primary, colors.lightBg)}
+          color={btnColor}
           variant="ghost"
           fontWeight="bold"
           fontFamily="Syne"
           fontSize={{ base: "lg", lg: "2xl" }}
           rightIcon={
             <Box ml="0.5rem">
-              <svg
-                width="15px"
-                viewBox="0 0 10 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.873535 9L8.91951 1"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  stroke={useColorModeValue(colors.primary, colors.lightBg)}
-                />
-                <path
-                  d="M0.873535 1H8.91951V9"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  stroke={useColorModeValue(colors.primary, colors.lightBg)}
-                />
+              <svg width="15px" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.873535 9L8.91951 1" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} stroke={btnColor} />
+                <path d="M0.873535 1H8.91951V9" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} stroke={btnColor} />
               </svg>
             </Box>
           }
-          onClick={(e) => {
-            window.open("https://uowm-opac.seab.gr/", "_blank", "noopener,noreferrer");
-          }}
+          onClick={() => window.open(lib.catalogUrl, "_blank", "noopener,noreferrer")}
           justifyContent="center"
         >
           {i18n.t("katalogosbibliothikis")}

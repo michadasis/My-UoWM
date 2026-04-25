@@ -36,48 +36,46 @@
 
 */
 
-import { Box, Heading, useToast } from "@chakra-ui/react";
-import { useEffect } from "react";
+import { Box, Heading } from "@chakra-ui/react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAnnouncementLink, useDepName } from "../hooks";
+import { useDepName, useScheduleData } from "../hooks";
 import i18n from "../i18n";
 
-export default function AnnouncementsPage() {
+export default function SchedulePage({ examsProp, semesterProp }) {
   const { depCode } = useDepName();
-  const toast = useToast();
   const navigate = useNavigate();
-  const announcementLink = useAnnouncementLink(depCode);
+  const scheduleData = useScheduleData(depCode);
+  const didRedirect = useRef(false);
+
+  const redirectTo = (link) => {
+    window.open(link, "_blank", "noopener,noreferrer");
+    navigate("/");
+  };
 
   useEffect(() => {
-    if (!depCode) {
-      toast({
-        title: i18n.t("error_title"),
-        description: i18n.t("error_description"),
-        status: "error",
-        duration: 5000,
-        isClosable: true,
-        position: "bottom",
-      });
+    if (didRedirect.current) return;
+    didRedirect.current = true;
+
+    if (!scheduleData) {
+      navigate("/");
+      return;
     }
-    if (announcementLink) {
-      window.open(announcementLink.link, "_blank", "noopener,noreferrer");
+
+    if (examsProp && scheduleData.exam) {
+      redirectTo(scheduleData.exam);
+    } else if (semesterProp && scheduleData.semester) {
+      redirectTo(scheduleData.semester);
+    } else {
       navigate("/");
     }
-  }, [depCode]);
+  }, []);
+
   return (
     <Box>
-      {announcementLink ? (
-        <Heading textAlign="center" marginTop="50px">
-          {i18n.t("graduation_redirection_message")}
-          <a href={announcementLink.link} target="_blank" rel="noreferrer">
-            {announcementLink.code}
-          </a>
-        </Heading>
-      ) : (
-        <Heading textAlign="center" marginTop="50px">
-          {i18n.t("error_description")}
-        </Heading>
-      )}
+      <Heading textAlign="center" marginTop="50px">
+        {scheduleData ? i18n.t("redirecting") : i18n.t("error_description")}
+      </Heading>
     </Box>
   );
 }

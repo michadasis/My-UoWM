@@ -37,41 +37,45 @@
 */
 
 import { Box, Heading } from "@chakra-ui/react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDepName, useScheduleData } from "../hooks";
 import i18n from "../i18n";
-
+ 
 export default function SchedulePage({ examsProp, semesterProp }) {
   const { depCode } = useDepName();
   const navigate = useNavigate();
   const scheduleData = useScheduleData(depCode);
+  const didRedirect = useRef(false);
+ 
   const redirectTo = (link) => {
     window.open(link, "_blank", "noopener,noreferrer");
     navigate("/");
   };
-
+ 
   useEffect(() => {
-    if (examsProp) {
+    if (didRedirect.current) return;
+    didRedirect.current = true;
+ 
+    if (!scheduleData) {
+      navigate("/");
+      return;
+    }
+ 
+    if (examsProp && scheduleData.exam) {
       redirectTo(scheduleData.exam);
-    }
-
-    if (semesterProp) {
+    } else if (semesterProp && scheduleData.semester) {
       redirectTo(scheduleData.semester);
+    } else {
+      navigate("/");
     }
-  }, [depCode]);
-
+  }, []);
+ 
   return (
     <Box>
-      {scheduleData ? (
-        <Heading textAlign="center" marginTop="50px">
-          {i18n.t("redirecting")}
-        </Heading>
-      ) : (
-        <Heading textAlign="center" marginTop="50px">
-          {i18n.t("error_description")}
-        </Heading>
-      )}
+      <Heading textAlign="center" marginTop="50px">
+        {scheduleData ? i18n.t("redirecting") : i18n.t("error_description")}
+      </Heading>
     </Box>
   );
 }

@@ -53,7 +53,7 @@ import i18n from "../i18n";
 import { colors } from "../theme/theme";
 
 export default function MenuBox({ category }) {
-  const { title, iconSVG, route, span, isExternal, requireSelection } =
+  const { title, iconSVG, route, span, isExternal, requireSelection, resolveRoute } =
       category;
   const { depName, depCode } = useDepName();
   const departments = useDepartments();
@@ -82,9 +82,14 @@ export default function MenuBox({ category }) {
   const navigate = useNavigate();
 
   const handleNavigation = () => {
-    isExternal
-        ? window.open(route, "_blank", "noopener,noreferrer")
-        : navigate(route);
+    if (resolveRoute) {
+      const resolvedRoute = resolveRoute(depCode);
+      if (resolvedRoute) window.open(resolvedRoute, "_blank", "noopener,noreferrer");
+    } else if (isExternal) {
+      window.open(route, "_blank", "noopener,noreferrer");
+    } else {
+      navigate(route);
+    }
   };
 
   const handleSelection = () => {
@@ -149,7 +154,7 @@ export default function MenuBox({ category }) {
                   "light-mode-svg",
                   "dark-mode-svg"
               )}`}>
-            {isExternal ? <DiagonalRightArrowIcon /> : <RightArrowIcon />}
+            {isExternal || resolveRoute ? <DiagonalRightArrowIcon /> : <RightArrowIcon />}
           </Box>
         </Flex>
         <Heading

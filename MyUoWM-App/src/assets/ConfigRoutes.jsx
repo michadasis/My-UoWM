@@ -35,7 +35,47 @@
     -Fakidis
 
 */
+/*
+  MIT License
+
+  Copyright (c) 2022 Open Source  UOM
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+
+  Made by Open Source UoM (https://opensource.uom.gr)
+
+  Project members:
+    -Apostolidis
+    -Davios
+    -Iosifidis
+    -Konstantinidis
+    -Mpakalis
+    -Nasis
+    -Omiliades
+    -Patsouras
+    -Fakidis
+
+*/
 import { lazy } from "react";
+import { AnnouncementsData } from "./data/announcements";
+import { PersonnelData } from "./data/personnel";
+import { schedulesData } from "./data/ScheduleLink";
 import {
   DepAnnounceIcon,
   CalendarTimeIcon,
@@ -64,28 +104,33 @@ const AnnouncementPage = lazy(() => import("../pages/AnnouncementPage"));
 const SchedulePage = lazy(() => import("../pages/SchedulePage"));
 const AcademicPersonnelPage = lazy(() => import("../pages/AcademicPersonnelPage"));
 
+const SemesterSchedulePage = () => <SchedulePage semesterProp={true} />;
+const ExamSchedulePage = () => <SchedulePage examsProp={true} />;
+
 export const Categories = [
   {
     title: i18n.t("announcements"),
     iconSVG: <DepAnnounceIcon />,
-    route: "/announcements",
+    route: null,
+    resolveRoute: (depCode) => AnnouncementsData.find((d) => d.code === depCode)?.link ?? null,
     span: 2,
     isExternal: true,
     requireSelection: true,
     position: 1,
     hide: false,
-    pageComponent: AnnouncementPage,
+    pageComponent: null,
   },
   {
     title: i18n.t("course_schedule"),
     iconSVG: <CalendarTimeIcon />,
-    route: "/semesterschedule",
+    route: null,
+    resolveRoute: (depCode) => schedulesData.get(depCode)?.semester ?? null,
     span: 1,
     isExternal: true,
     requireSelection: true,
     position: 2,
     hide: false,
-    pageComponent: () => <SchedulePage semesterProp={true} />,
+    pageComponent: null,
   },
   {
     title: i18n.t("StudentPortal"),
@@ -167,13 +212,14 @@ export const Categories = [
   {
     title: i18n.t("exams_schedule"),
     iconSVG: <ExamsTestIcon />,
-    route: "/examschedule",
+    route: null,
+    resolveRoute: (depCode) => schedulesData.get(depCode)?.exam ?? null,
     isExternal: true,
     span: 1,
     requireSelection: true,
     position: 10,
     hide: false,
-    pageComponent: () => <SchedulePage examsProp={true} />,
+    pageComponent: null,
   },
   {
     title: i18n.t("studentClubs"),
@@ -200,12 +246,13 @@ export const Categories = [
   {
     title: i18n.t("academic_personnel"),
     iconSVG: <PeopleIcon />,
-    route: "/academic_personnel",
+    route: null,
+    resolveRoute: (depCode) => PersonnelData.find((d) => d.code === depCode)?.link ?? null,
     span: 1,
     isExternal: true,
     requireSelection: true,
     position: 13,
     hide: false,
-    pageComponent: AcademicPersonnelPage,
+    pageComponent: null,
   },
 ];

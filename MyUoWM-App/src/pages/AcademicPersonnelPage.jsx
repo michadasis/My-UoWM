@@ -1,5 +1,5 @@
 import { Box, Heading, useToast } from "@chakra-ui/react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDepName, usePersonnelLink } from "../hooks";
 import i18n from "../i18n";
@@ -9,9 +9,13 @@ export default function AcademicPersonnelPage() {
   const toast = useToast();
   const navigate = useNavigate();
   const personnelLink = usePersonnelLink(depCode);
+  const didRedirect = useRef(false);
 
   useEffect(() => {
-    if (!depCode) {
+    if (didRedirect.current) return;
+    didRedirect.current = true;
+
+    if (!depCode || !personnelLink) {
       toast({
         title: i18n.t("error_title"),
         description: i18n.t("error_description"),
@@ -23,23 +27,16 @@ export default function AcademicPersonnelPage() {
       navigate("/");
       return;
     }
-    if (personnelLink) {
-      window.open(personnelLink.link, "_blank", "noopener,noreferrer");
-      navigate("/");
-    }
-  }, [depCode]);
+
+    window.open(personnelLink.link, "_blank", "noopener,noreferrer");
+    navigate("/");
+  }, []);
 
   return (
     <Box>
-      {personnelLink ? (
-        <Heading textAlign="center" marginTop="50px">
-          {i18n.t("redirecting")}
-        </Heading>
-      ) : (
-        <Heading textAlign="center" marginTop="50px">
-          {i18n.t("error_description")}
-        </Heading>
-      )}
+      <Heading textAlign="center" marginTop="50px">
+        {i18n.t("redirecting")}
+      </Heading>
     </Box>
   );
 }
